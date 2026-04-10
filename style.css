@@ -441,7 +441,7 @@ a {
 /* Описательный текст карточки */
 .duration__text {
     font-family: var(--f-serif);
-    font-size: 14px;
+    font-size: 15px;
     line-height: 150%;
 }
 
