@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELF — Большой зал</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="nav__link">ГЛАВНАЯ</a>
+        <a href="certificates.html" class="nav__link">СЕРТИФИКАТЫ</a>
+        <a href="index.html" class="nav__logo"><img src="logo-self.svg" alt="SELF" class="nav__logo-img"></a>
+        <div class="nav__dropdown">
+            <div class="nav__link--active nav__dropdown-trigger">
+                <a href="room-small.html" class="nav__dropdown-label">АРЕНДА ЗАЛОВ</a>
+                <div class="nav__dropdown-subitems">
+                    <a href="room-small.html" class="nav__dropdown-item">Малый зал</a>
+                    <a href="room-big.html" class="nav__dropdown-item nav__dropdown-item--active">Большой зал</a>
+                </div>
+            </div>
+        </div>
+        <a href="about.html" class="nav__link">О СТУДИИ</a>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero rooms-hero">
+    <div class="hero__wave">
+        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
+            <path d="M0,0 L0,130 Q200,200 450,130 Q700,60 950,130 Q1150,185 1350,110 L1440,80 L1440,0 Z" fill="#FA99C0"/>
+        </svg>
+    </div>
+    <div class="rooms-hero__inner">
+        <h1 class="rooms-hero__title">БОЛЬШОЙ ЗАЛ</h1>
+        <p class="rooms-hero__desc">В НАШЕЙ СТУДИИ ДОСТУПНА АРЕНДА ЗАЛОВ ДЛЯ ВАШИХ ПРАЗДНИКОВ, МЕРОПРИЯТИЙ, МАСТЕР-КЛАССОВ, ЛЕКЦИЙ ИЛИ КОНТЕНТ-СЪЁМОК.</p>
+    </div>
+</section>
+
+<!-- СТИКЕРЫ + ФОТО -->
+<section class="about">
+    <div class="about__stripe-top"></div>
+    <div class="blob blob--green"></div>
+    <div class="blob blob--yellow"></div>
+    <div class="blob blob--arch"></div>
+
+    <div class="about__inner">
+        <div class="about__notes-area">
+            <div class="note note--orange note--1">
+                <p>Доступное время для аренды — с 10:00 до 23:00. В удобное время можно выбрать подходящую для вас дату и срок.</p>
+            </div>
+            <div class="note note--pink note--2">
+                <p>Для аренды зала достаточно связаться с администратором или заполнить форму на этой странице — мы обязательно свяжемся с вами.</p>
+            </div>
+            <div class="note note--orange note--3">
+                <p>Также аренду зала можно совместить со съёмкой в фотокомнате. Стоимость аренды фотокомнаты — 50–60 мин (40 минут в зависимости от тарифа).</p>
+            </div>
+            <div class="note note--pink note--4">
+                <p>В зале есть мебель, стулья, столы, посуда, которую можно арендовать по прайсу. Вы также можете принести свои декор, еду и напитки.</p>
+            </div>
+        </div>
+
+        <div class="about__photos-col">
+            <div class="about__photo about__photo--top">
+                <div class="placeholder">Фото большого зала</div>
+            </div>
+            <div class="about__photo-row">
+                <div class="about__photo about__photo--bottom">
+                    <div class="placeholder">Фото большого зала</div>
+                </div>
+                <div class="about__bubble">
+                    <span>Вид<br>на большой зал<br>изнутри.</span>
+                    <div class="about__bubble-tail"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ФОТО-КАРУСЕЛЬ -->
+<section class="carousel">
+    <div class="carousel__track">
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+    </div>
+    <button class="carousel__arrow" aria-label="Листать">›</button>
+</section>
+
+<!-- ТАРИФЫ АРЕНДЫ БОЛЬШОГО ЗАЛА -->
+<section class="tariffs">
+    <div class="tariffs__heading-wrap">
+        <h2 class="tariffs__heading">ТАРИФЫ АРЕНДЫ БОЛЬШОГО ЗАЛА</h2>
+    </div>
+
+    <div class="tariffs__table-wrap">
+        <div class="tariffs__columns">
+            <div class="tariffs__col">
+                <h3 class="tariffs__col-title">Будние дни, с 10:00 до 17:00</h3>
+                <div class="tariffs__row"><span>1 час</span><span class="tariffs__dots"></span><span>2000 руб.</span></div>
+                <div class="tariffs__row"><span>2 часа</span><span class="tariffs__dots"></span><span>4000 руб.</span></div>
+                <div class="tariffs__row"><span>3 часа</span><span class="tariffs__dots"></span><span>6000 руб.</span></div>
+            </div>
+            <div class="tariffs__col">
+                <h3 class="tariffs__col-title">Будние дни, с 17:00 до 23:00<br>и выходные дни</h3>
+                <div class="tariffs__row"><span>1 час</span><span class="tariffs__dots"></span><span>3000 руб.</span></div>
+                <div class="tariffs__row"><span>2 часа</span><span class="tariffs__dots"></span><span>5500 руб.</span></div>
+                <div class="tariffs__row"><span>3 часа</span><span class="tariffs__dots"></span><span>7500 руб.</span></div>
+            </div>
+        </div>
+        <p class="tariffs__note">Доплата за позднее время (20:00–23:00) <span class="tariffs__dots-inline"></span> 300 руб./ч.</p>
+    </div>
+
+    <!-- АРЕНДА ФОТОКОМНАТЫ СОВМЕСТНО С БОЛЬШИМ ЗАЛОМ -->
+    <div class="tariffs__extra">
+        <h3 class="tariffs__extra-title">АРЕНДА ФОТОКОМНАТЫ  СОВМЕСТНО С АРЕНДОЙ БОЛЬШОГО ЗАЛА*</h3>
+        <div class="tariffs__table-wrap">
+            <div class="tariffs__columns">
+                <div class="tariffs__col">
+                    <h3 class="tariffs__col-title">Будние дни, с 10:00 до 17:00</h3>
+                    <div class="tariffs__row"><span>25 минут</span><span class="tariffs__dots"></span><span>2000 руб.</span></div>
+                    <div class="tariffs__row"><span>40 минут</span><span class="tariffs__dots"></span><span>3500 руб.</span></div>
+                    <div class="tariffs__row"><span>90 минут</span><span class="tariffs__dots"></span><span>4500 руб.</span></div>
+                </div>
+                <div class="tariffs__col">
+                    <h3 class="tariffs__col-title">Будние дни, с 17:00 до 23:00<br>и выходные дни</h3>
+                    <div class="tariffs__row"><span>25 минут</span><span class="tariffs__dots"></span><span>2000 руб.</span></div>
+                    <div class="tariffs__row"><span>40 минут</span><span class="tariffs__dots"></span><span>3700 руб.</span></div>
+                    <div class="tariffs__row"><span>90 минут</span><span class="tariffs__dots"></span><span>5500 руб.</span></div>
+                </div>
+            </div>
+            <p class="tariffs__note">Доплата за количество участников съёмки (если человек более, чем 5) <span class="tariffs__dots-inline"></span> 300 руб./чел.</p>
+        </div>
+    </div>
+
+    <p class="tariffs__footnote">*Время аренды зала и фотокомнаты суммируется. Пример: вы хотите приобрести большой зал на 2 часа в будние с 10:00 и затем провести фотосъёмку на 40 минут. Итоговая аренда составит: 2 часа 40 минут, с 10:00 до 12:40. В это время вы можете использовать как 40 минут в фотокомнате, так и любой другой формат.</p>
+
+    <!-- АРЕНДА ПОСУДЫ -->
+    <div class="tariffs__dishes">
+        <h3 class="tariffs__dishes-title">Вы также можете арендовать посуду по следующему расценкам:</h3>
+        <div class="tariffs__dishes-list">
+            <div class="tariffs__row"><span>Фужеры-креманки</span><span class="tariffs__dots"></span><span>100 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Тарелка (d 30–35 см)</span><span class="tariffs__dots"></span><span>100 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Тарелка (d 15 см)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Стаканы</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Чайный набор (чашка+блюдце)</span><span class="tariffs__dots"></span><span>200 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Графин</span><span class="tariffs__dots"></span><span>200 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Комплект столовых приборов (ложка десертная и столовая, вилка и нож)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- КОНТАКТ-ФОРМА -->
+<section class="contact">
+    <div class="contact__left">
+        <p class="contact__logo">SELF</p>
+        <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
+        <a href="#" class="contact__link">ДОГОВОР ОБ АРЕНДЕ ЗАЛА</a>
+    </div>
+    <div class="contact__right">
+        <p class="contact__intro">Если вы хотите арендовать у нас зал под своё мероприятие, то вы можете оставить заявку в форме ниже. В течение суток наш администратор с вами обязательно свяжется :)</p>
+        <label class="contact__label">ВАШ НОМЕР ТЕЛЕФОНА</label>
+        <input type="tel" class="contact__input" placeholder="+7 (___) ___-__-__">
+        <label class="contact__label">УКАЖИ ИМЕНА И ФАМИЛИЮ</label>
+        <input type="text" class="contact__input" placeholder="Имя Фамилия">
+        <button class="contact__btn">ОТПРАВИТЬ</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__top">
+        <span>Study project</span>
+        <span>Icons by Icons8</span>
+        <span>Not for commercial use!</span>
+    </div>
+    <div class="footer__socials">
+        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+    </div>
+</footer>
+
+
+<script>
+    // Карусель — прокрутка
+    var arrow = document.querySelector('.carousel__arrow');
+    if (arrow) {
+        arrow.addEventListener('click', function() {
+            document.querySelector('.carousel__track').scrollBy({left: 300, behavior: 'smooth'});
+        });
+    }
+
+    // Dropdown — скрыть после выбора пункта
+    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var menu = this.closest('.nav__dropdown-menu');
+            if (menu) menu.style.display = 'none';
+            // Восстановить при следующем наведении
+            setTimeout(function() {
+                if (menu) menu.style.display = '';
+            }, 300);
+        });
+    });
+</script>
+
+</body>
+</html>

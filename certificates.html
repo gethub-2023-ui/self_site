@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELF — Сертификаты</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER (СЕРТИФИКАТЫ active) -->
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="nav__link">ГЛАВНАЯ</a>
+        <a href="certificates.html" class="nav__link nav__link--active">СЕРТИФИКАТЫ</a>
+        <a href="index.html" class="nav__logo"><img src="logo-self.svg" alt="SELF" class="nav__logo-img"></a>
+        <div class="nav__dropdown">
+            <div class="nav__dropdown-trigger">
+                <a href="room-small.html" class="nav__dropdown-label">АРЕНДА ЗАЛОВ</a>
+                <div class="nav__dropdown-subitems">
+                    <a href="room-small.html" class="nav__dropdown-item">Малый зал</a>
+                    <a href="room-big.html" class="nav__dropdown-item">Большой зал</a>
+                </div>
+            </div>
+        </div>
+        <a href="about.html" class="nav__link">О СТУДИИ</a>
+    </nav>
+</header>
+
+<!-- Бежевый фон #FFF5D9 по бокам оранжевого — как на главной -->
+<div class="hero-duration-wrap">
+
+<!-- HERO — оранжевый блок с фото и текстом о сертификатах (без волны, как на главной) -->
+<section class="hero cert-hero">
+    <div class="hero__inner">
+        <!-- ФОТО слева — заглушка SVG (916×566), замени src на свой SVG -->
+        <div class="hero__photo-col">
+            <div class="hero__photo-wrap">
+                <img src="Group 1.svg" alt="Фото сертификата SELF" class="hero__photo-img">
+            </div>
+        </div>
+
+        <!-- ТЕКСТ справа -->
+        <div class="hero__text-col">
+            <h1 class="hero__title">СЕРТИФИКАТ-</h1>
+            <p class="hero__desc">Не знаете, что подарить? Подарочный сертификат — это всегда беспроигрышный вариант. Дарите не просто вещь, а возможность выбрать то, что действительно хочется. Приятный сюрприз, который точно не разочарует.</p>
+            <a href="#" class="hero__btn"><img src="button.svg" alt="Приобрести подарочный сертификат" class="hero__btn-img"></a>
+        </div>
+    </div>
+</section>
+
+<!-- ТАРИФЫ СЕРТИФИКАТОВ — два варианта -->
+<section class="duration">
+    <h2 class="duration__heading">МОЖНО ПРИОБРЕСТИ РАЗНЫЙ ТАРИФ СЕРТИФИКАТА:</h2>
+    <div class="duration__grid">
+        <div class="duration__card">
+            <span class="duration__time">40 МИНУТ</span>
+            <span class="duration__price">3700 рублей</span>
+            <p class="duration__text">средняя продолжительность съёмки, подойдёт для смены нескольких образов или семейной съёмки</p>
+        </div>
+        <div class="duration__card">
+            <span class="duration__time">90 МИНУТ</span>
+            <span class="duration__price">5500 рублей</span>
+            <p class="duration__text">подойдёт для больших компаний, семейной съёмки или для съёмки во множестве образов</p>
+        </div>
+    </div>
+</section>
+
+</div><!-- /hero-duration-wrap -->
+
+<!-- Лавандовая полоска СВЕРХУ -->
+<div class="about__stripe-top"></div>
+
+<!-- СЕКЦИЯ О СЕРТИФИКАТАХ — стикеры + фото -->
+<section class="about about--cert">
+    <div class="blob blob--green"></div>
+    <div class="blob blob--yellow"></div>
+    <div class="blob blob--arch"></div>
+
+    <div class="about__inner">
+        <div class="about__notes-area">
+            <div class="note note--orange note--1">
+                <p>После покупки сертификата сразу доступна его электронная версия. Бумажный вариант можно забрать в студии в любой день и время.</p>
+            </div>
+            <div class="note note--pink note--2">
+                <p>Записаться на съёмку по сертификату можно онлайн через этот сайт на главной странице. Бронирование съёмки происходит после полной оплаты.</p>
+            </div>
+            <div class="note note--orange note--3">
+                <p>Съёмка по сертификату проходит, как обычная съёмка: в студии вас встретит администратор и проведёт инструктаж. Количество кадров неограниченно.</p>
+            </div>
+        </div>
+
+        <div class="about__photos-col">
+            <div class="about__photo about__photo--top">
+                <img src="cert-photo2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover">
+            </div>
+            <div class="about__photo about__photo--bottom">
+                <img src="cert-photo1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover">
+            </div>
+            <div class="about__bubble">
+                <span>Бумажный сертификат можно забрать в студии</span>
+                <div class="about__bubble-tail"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Лавандовая полоска СНИЗУ -->
+<div class="about__stripe-bottom"></div>
+
+<!-- ФОТО-КАРУСЕЛЬ -->
+<section class="carousel carousel--cert">
+    <div class="carousel__track">
+        <div class="carousel__item"><img src="carousel1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel3.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel4.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel5.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    </div>
+    <button class="carousel__arrow" aria-label="Листать">›</button>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__top">
+        <span>Study project</span>
+        <span>Icons by Icons8</span>
+        <span>Not for commercial use!</span>
+    </div>
+    <div class="footer__socials">
+        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+    </div>
+</footer>
+
+
+<script>
+    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var menu = this.closest('.nav__dropdown-menu');
+            if (menu) menu.style.display = 'none';
+            setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
+        });
+    });
+</script>
+
+</body>
+</html>

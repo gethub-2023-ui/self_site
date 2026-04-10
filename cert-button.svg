@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="492" height="110" viewBox="0 0 492 110">
+  <defs>
+    <linearGradient id="btnGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FF565F"/>
+      <stop offset="100%" stop-color="#E93DB4"/>
+    </linearGradient>
+    <filter id="btnShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="2" flood-color="#E4683B" flood-opacity="0.61"/>
+    </filter>
+  </defs>
+  <rect width="492" height="110" rx="55" fill="url(#btnGrad)" filter="url(#btnShadow)"/>
+  <text x="246" y="42" text-anchor="middle" dominant-baseline="middle" font-family="Inter, sans-serif" font-weight="600" font-size="28" fill="#FFFFFF">ПРИОБРЕСТИ</text>
+  <text x="246" y="76" text-anchor="middle" dominant-baseline="middle" font-family="Inter, sans-serif" font-weight="600" font-size="28" fill="#FFFFFF">ПОДАРОЧНЫЙ СЕРТИФИКАТ</text>
+</svg>

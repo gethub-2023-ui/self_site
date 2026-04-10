@@ -1,0 +1,1609 @@
+/* ================================================================
+   SELF ФОТОСТУДИЯ — ФАЙЛ СТИЛЕЙ
+   Этот файл отвечает за ВСЮ визуальную часть сайта.
+   Каждый блок подробно подписан — читай комментарии.
+   ================================================================ */
+
+
+/* ================================================================
+   БЛОК: ПОДКЛЮЧЕНИЕ ШРИФТОВ
+   Здесь загружаются шрифты из папки fonts/
+   Если шрифт не отображается — проверь что файл лежит в папке fonts/
+   ================================================================ */
+
+/* Inter Regular — для обычного текста навигации, заголовков */
+@font-face {
+    font-family: 'Inter';          /* Имя шрифта, по которому его вызываем */
+    font-style: normal;             /* Обычный стиль (не курсив) */
+    font-weight: 400;               /* 400 = обычная толщина (Regular) */
+    font-display: swap;             /* Показать текст сразу, подгрузить шрифт потом */
+    src: url('fonts/Inter-Regular.ttf') format('truetype');  /* Путь к файлу шрифта */
+}
+
+/* Inter SemiBold — для полужирного текста (заголовки карточек, кнопки) */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;               /* 600 = полужирный (SemiBold) */
+    font-display: swap;
+    src: url('fonts/Inter-SemiBold.ttf') format('truetype');
+}
+
+/* Inter Bold — для жирного текста (логотип SELF, заголовки) */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;               /* 700 = жирный (Bold) */
+    font-display: swap;
+    src: url('fonts/Inter-Bold.ttf') format('truetype');
+}
+
+/* Libre Baskerville Regular — для описательного текста (serif, с засечками) */
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/LibreBaskerville-Regular.ttf') format('truetype');
+}
+
+/* Libre Baskerville Bold */
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url('fonts/LibreBaskerville-Bold.ttf') format('truetype');
+}
+
+/* Libre Baskerville Italic — для курсивного текста */
+@font-face {
+    font-family: 'Libre Baskerville';
+    font-style: italic;
+    font-weight: 400;
+    font-display: swap;
+    src: url('fonts/LibreBaskerville-Italic.ttf') format('truetype');
+}
+
+
+/* ================================================================
+   БЛОК: ЦВЕТА САЙТА (ПЕРЕМЕННЫЕ)
+   Все цвета хранятся здесь. Чтобы изменить цвет по всему сайту —
+   поменяй значение ТОЛЬКО ЗДЕСЬ, и оно обновится везде.
+   
+   Пример: хочешь другой оранжевый — меняй --orange: #НОВЫЙЦВЕТ;
+   ================================================================ */
+:root {
+    --orange: #EB6333;      /* Основной оранжевый — фон hero, duration, footer, арка */
+    --pink: #FA99C0;        /* Розовый — волна в hero, рамки карточек, фон секции quote */
+    --yellow: #FFD96C;      /* Жёлтый — фон навигации, карточки "для съёмки", "часы работы" */
+    --green: #6AD8C4;       /* Зелёный — декоративный блоб (пятно) в секции About */
+    --btn-from: #FF565F;    /* Градиент кнопки НАЧАЛО — красно-оранжевый */
+    --btn-to: #E93DB4;      /* Градиент кнопки КОНЕЦ — розово-фиолетовый. Также цвет розовых стикеров */
+    --black: #000;          /* Чёрный — основной цвет текста */
+    --white: #FFF;          /* Белый */
+    --beige: #FFF8F0;       /* Бежевый — фон страницы, фон секции About */
+    --lavender: #A7A5E2;    /* Лавандовый — декоративная полоска над секцией About */
+    --f-sans: 'Inter', sans-serif;              /* Шрифт без засечек — для заголовков, навигации, кнопок */
+    --f-serif: 'Libre Baskerville', serif;      /* Шрифт с засечками — для описательного текста */
+}
+
+
+/* ================================================================
+   БЛОК: СБРОС СТИЛЕЙ + ОБЩИЕ НАСТРОЙКИ
+   Убираем стандартные отступы браузера и задаём базу
+   ================================================================ */
+*,
+*::before,
+*::after {
+    margin: 0;              /* Убираем отступы по умолчанию */
+    padding: 0;             /* Убираем внутренние отступы */
+    box-sizing: border-box; /* Ширина включает padding и border */
+}
+
+body {
+    font-family: var(--f-serif);    /* Основной шрифт сайта — Libre Baskerville */
+    color: var(--black);            /* Цвет текста — чёрный */
+    background: var(--beige);       /* Фон всей страницы — бежевый */
+    overflow-x: hidden;             /* Скрыть горизонтальную прокрутку */
+    max-width: 1440px;              /* Максимальная ширина сайта */
+    margin: 0 auto;                 /* Центрируем сайт на больших экранах */
+}
+
+img {
+    max-width: 100%;        /* Картинки не выходят за пределы блока */
+    display: block;         /* Убираем пробел под картинкой */
+}
+
+a {
+    text-decoration: none;  /* Убираем подчёркивание у ссылок */
+    color: inherit;         /* Ссылки наследуют цвет родителя */
+}
+
+/* Заглушка для фото — серый прямоугольник с надписью "Фото" */
+.placeholder {
+    width: 100%;
+    height: 100%;
+    background: #E8E8E8;           /* Светло-серый фон */
+    display: flex;                  /* Flexbox для центрирования текста */
+    align-items: center;            /* Центр по вертикали */
+    justify-content: center;        /* Центр по горизонтали */
+    font-family: var(--f-sans);     /* Шрифт Inter */
+    font-size: 14px;                /* Размер текста */
+    color: #9B9B9B;                 /* Серый цвет текста */
+    border: 2px dashed #CACACA;     /* Пунктирная рамка */
+}
+
+
+/* ================================================================
+   БЛОК 1: НАВИГАЦИЯ (HEADER)
+   Жёлтая полоска сверху с меню: ГЛАВНАЯ, СЕРТИФИКАТЫ, SELF, АРЕНДА ЗАЛОВ, О СТУДИИ
+   ================================================================ */
+
+/* Контейнер навигации — жёлтый фон на всю ширину */
+.header {
+    background: var(--yellow);      /* Цвет фона — жёлтый #FFD96C */
+    padding: 18px 60px;             /* Отступы: 18px сверху/снизу, 60px по бокам */
+    position: relative;             /* Для z-index */
+    z-index: 100;                   /* Навигация поверх контента — dropdown наплывает вниз */
+}
+
+/* Сама навигация — элементы в ряд по центру */
+.nav {
+    display: flex;                  /* Располагаем элементы в ряд */
+    align-items: center;            /* Выравниваем по вертикали */
+    justify-content: center;        /* Центрируем всё по горизонтали */
+    gap: 36px;                      /* Расстояние между пунктами меню — 36px */
+}
+
+/* ================================================================
+   НАВИГАЦИЯ — ССЫЛКИ
+   Обычные ссылки — оранжевый текст.
+   Активная страница — жирное розовое кольцо #E93D84 + тонкое чёрное подчёркивание.
+   При наведении на неактивную — текст становится чёрным (без подчёркивания).
+
+   Чтобы изменить цвет кольца — меняй border у .nav__link--active
+   Чтобы изменить толщину кольца — меняй border-width у .nav__link--active
+   Чтобы изменить подчёркивание — меняй border-bottom у .nav__link--active
+   ================================================================ */
+
+/* Обычные ссылки навигации */
+/* Невидимый border резервирует место — не дёргается при переключении страниц */
+.nav__link {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 400;               /* НЕ жирный */
+    text-transform: uppercase;
+    color: var(--orange);           /* Оранжевый текст */
+    transition: color 0.2s;
+    border: 4px solid transparent;  /* Невидимая рамка — резервирует место */
+    border-radius: 30px;
+    padding: 8px 26px 10px;         /* Совпадает с --active */
+    line-height: 1.2;
+    text-decoration: underline;
+    text-decoration-color: transparent; /* Невидимое подчёркивание — резервирует место */
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* При наведении на обычную ссылку — текст чёрный, БЕЗ подчёркивания */
+.nav__link:hover {
+    color: var(--black);
+    opacity: 1;
+}
+
+/* Активная ссылка (текущая страница) — жирное розовое кольцо + подчёркивание */
+/* Цвет кольца: #E93D84 — меняй тут если нужен другой */
+/* Толщина кольца: 4px — меняй тут */
+/* Подчёркивание текста: чёрная линия внутри кольца */
+.nav__link--active {
+    border-color: #E93D84;          /* Розовое кольцо становится видимым */
+    /*
+       СКРУГЛЕНИЕ КОЛЬЦА — настройка симметрии:
+       padding: ВЕРХ БОКА НИЗ
+       Сейчас: 8px сверху, 26px по бокам, 10px снизу
+       Если кольцо несимметричное — меняй эти значения тут:
+    */
+    background: var(--yellow);      /* Фон = жёлтый (как шапка навигации) */
+    color: var(--black);
+    text-decoration-color: var(--black); /* Подчёркивание становится видимым */
+}
+
+/* Активная ссылка при наведении — ничего не меняется */
+.nav__link--active:hover {
+    color: var(--black);
+}
+
+/* Логотип SELF по центру навигации */
+.nav__logo {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;                 /* Отступы слева/справа от логотипа */
+}
+
+/* Картинка логотипа — размер 270×100, прозрачный фон */
+/* Чтобы изменить размер логотипа — меняй width и height тут */
+.nav__logo-img {
+    width: 270px;                   /* Ширина логотипа */
+    height: 100px;                  /* Высота логотипа */
+    object-fit: contain;            /* Сохраняет пропорции */
+}
+
+
+/* Бежевая обёртка — фон #FFF5D9 виден по бокам оранжевого */
+/* Оборачивает hero и duration секции */
+.hero-duration-wrap {
+    background: #FFF5D9;            /* Бежевый фон по бокам */
+}
+
+/* ================================================================
+   БЛОК 2: ГЕРОЙ (HERO) — Главный экран с фото и текстом
+   Бежевый фон #FFF5D9 на всю ширину (от обёртки).
+   Оранжевый блок УЖЕНЬКИЙ по центру (с отступами по бокам).
+   Фото начинается от бежевого поля слева и заходит под текст.
+   ================================================================ */
+
+/* Обёртка hero — прозрачная, бежевый идёт от родителя */
+.hero {
+    position: relative;
+    overflow: visible;
+    padding: 0;
+}
+
+/* Оранжевый центральный блок — УЖЕ чем полная ширина */
+.hero__inner {
+    background: var(--orange);      /* Оранжевый фон */
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 40px;                 /* Отступы по бокам — бежевый виден слева и справа */
+    padding: 30px 40px 40px;
+    gap: 0;
+}
+
+/* Колонка с фото — начинается от бежевого поля, заходит ПОД текст */
+.hero__photo-col {
+    flex-shrink: 0;
+    position: relative;
+    z-index: 1;                     /* ПОД текстом (текст z-index: 2) */
+    margin-left: -80px;             /* Фото выходит влево на бежевое поле */
+    margin-right: -200px;           /* Фото сильно заходит под текст — текст правее */
+}
+
+/* Обёртка фото — реальный размер 916×566 */
+.hero__photo-wrap {
+    width: 916px;                   /* Реальная ширина фото */
+    max-width: 55vw;                /* Не больше 55% экрана */
+    height: auto;
+}
+
+/* Реальное фото */
+.hero__photo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Розовая волна (для страниц сертификатов и залов, не для главной) */
+.hero__wave {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200px;
+    z-index: 0;
+}
+
+.hero__wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Колонка с текстом — ПОВЕРХ фото, сдвинута правее */
+.hero__text-col {
+    flex: 1;
+    max-width: 583px;               /* Ширина текстового блока — 583px по макету */
+    position: relative;
+    z-index: 2;                     /* Текст поверх фото */
+}
+
+/* Заголовок [СЭЛФ] - */
+.hero__title {
+    font-family: var(--f-sans);
+    font-size: 100px;
+    font-weight: 400;
+    line-height: 100%;
+    margin-bottom: 20px;
+}
+
+/* Описательный текст под заголовком */
+/* Шрифт: Libre Baskerville, 27px, line-height 120%, Regular */
+.hero__desc {
+    font-family: var(--f-serif);    /* Libre Baskerville */
+    font-size: 27px;                /* Размер — 27px по макету */
+    font-weight: 400;               /* Regular */
+    line-height: 120%;              /* Межстрочный — 120% по макету */
+    letter-spacing: 0;
+    margin-bottom: 32px;
+}
+
+/* Кнопка "ЗАПИСАТЬСЯ НА СЪЁМКУ" — 288×77, gradient, radius 100 */
+.hero__btn {
+    display: block;
+    text-align: center;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.hero__btn-img {
+    width: 288px;
+    height: 77px;
+    display: inline-block;
+}
+
+/* Кнопка при наведении — поднимается вверх */
+.hero__btn:hover {
+    transform: translateY(-3px);
+}
+
+/* Страница сертификатов — заголовок 80px по макету (на главной 100px) */
+.cert-hero .hero__title {
+    font-size: 80px;
+    line-height: 120%;
+}
+
+/* Кнопка сертификата — 492×110 по макету */
+.cert-hero .hero__btn-img {
+    width: 492px;
+    height: 110px;
+}
+
+
+/* ================================================================
+   БЛОК 3: ДЛИТЕЛЬНОСТЬ СЪЁМКИ (DURATION)
+   Заголовок на жёлтом фоне #FFD96C.
+   После заголовка фон продолжается оранжевым.
+   Карточки с ЖИРНЫМ розовым кольцом #FA99C0.
+   Цена цвета #A7A6E2 (лавандовый).
+   ================================================================ */
+
+/* Контейнер секции — оранжевый фон (продолжение hero) */
+.duration {
+    background: var(--orange);      /* Оранжевый фон — продолжение */
+    padding: 0 60px 40px;
+    margin: 0 40px;                 /* Те же отступы что у hero__inner — бежевое по бокам */
+}
+
+/* Заголовок на жёлтом фоне */
+/* Inter, 35px, Semi Bold (600), line-height 120%, uppercase, цвет #DB6338 */
+.duration__heading {
+    font-family: var(--f-sans);
+    font-size: 35px;                /* 35px по макету */
+    font-weight: 600;               /* Semi Bold */
+    text-align: center;
+    text-transform: uppercase;
+    color: #DB6338;                  /* Цвет текста — #DB6338 по макету */
+    line-height: 120%;              /* 120% по макету */
+    letter-spacing: 0;
+    background: var(--yellow);
+    margin: 0 -60px;
+    padding: 10px 60px;
+}
+
+/* Контейнер для трёх карточек в ряд */
+.duration__grid {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 24px;
+}
+
+/* Одна карточка — width 1005px общий, border 10px #FA99C0, radius 10px */
+/* Чтобы изменить толщину кольца — меняй border тут */
+.duration__card {
+    flex: 1;
+    max-width: 340px;
+    background: var(--white);
+    border: 10px solid #FA99C0;     /* ЖИРНОЕ кольцо — 10px, цвет #FA99C0 по макету */
+    border-radius: 10px;            /* Скругление 10px по макету */
+    padding: 24px 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+/* Карточка при наведении */
+.duration__card:hover {
+    transform: translateY(-3px);
+}
+
+/* Текст "25 МИНУТ" / "40 МИНУТ" / "90 МИНУТ" */
+.duration__time {
+    display: block;
+    font-family: var(--f-sans);
+    font-size: 24px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+/* Цена "2000 рублей" — цвет #A7A6E2 (лавандовый) */
+/* Чтобы изменить цвет цены — меняй color тут */
+.duration__price {
+    display: block;
+    font-family: var(--f-sans);
+    font-size: 18px;
+    font-weight: 600;
+    color: #A7A6E2;                 /* Лавандовый цвет цены — #A7A6E2 */
+    margin-bottom: 12px;
+}
+
+/* Описательный текст карточки */
+.duration__text {
+    font-family: var(--f-serif);
+    font-size: 15px;
+    line-height: 150%;
+}
+
+
+/* ================================================================
+   БЛОК 4: О СТУДИИ / СТИКЕРЫ + ФОТО (ABOUT)
+   Бежевый фон #FFF5D9, лавандовая полоска, декоративные блобы,
+   стикеры (записки) и фото — всё абсолютно спозиционировано по макету.
+   Секция = 1440 × ~990px в макете.
+   ================================================================ */
+
+.about {
+    position: relative;
+    padding: 0;
+    height: 799px;                      /* Чистый контент, полоски снаружи */
+    overflow: hidden;
+    background: #FFF5D9;                /* Бежевый фон */
+}
+
+/* Лавандовая полоска СВЕРХУ — отдельный элемент в HTML */
+.about__stripe-top {
+    width: 100%;
+    height: 65px;
+    background: #A7A6E2;
+    position: relative;
+    z-index: 5;
+}
+
+/* Лавандовая полоска СНИЗУ — через ::after НА УРОВНЕ ПОТОКА */
+.about__stripe-bottom {
+    width: 100%;
+    height: 65px;
+    background: #A7A6E2;
+    position: relative;
+    z-index: 5;
+}
+
+/* ---- ДЕКОРАТИВНЫЕ ЭЛЕМЕНТЫ (блобы) ---- */
+.blob {
+    position: absolute;
+    z-index: 0;
+}
+
+/* element 2 — зелёный блоб: 290×232, top 278, left 30 (картинка) */
+.blob--green {
+    width: 290px;
+    height: 232px;
+    top: 213px;
+    left: 30px;
+    background: url('element2-green.png') no-repeat center / contain;
+    border-radius: 0;
+    opacity: 1;
+}
+
+/* element 3 — жёлтое облако: 340×158, top 52, left 1070 (картинка) */
+.blob--yellow {
+    width: 340px;
+    height: 158px;
+    top: -13px;
+    left: 1070px;
+    right: auto;
+    background: url('element3-yellow.png') no-repeat center / contain;
+    border-radius: 0;
+    opacity: 1;
+}
+
+/* element 1 — оранжевая арка: 653×367, упирается в низ секции */
+.blob--arch {
+    width: 653px;
+    height: 367px;
+    top: 432px;
+    left: 394px;
+    bottom: auto;
+    background: var(--orange);
+    border-radius: 340px 340px 0 0;
+    z-index: 1;
+}
+
+/* Вырез внизу арки */
+.blob--arch::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 160px;
+    height: 100px;
+    background: #FFF5D9;
+    border-radius: 100px 100px 0 0;
+}
+
+/* ---- КОНТЕЙНЕР КОНТЕНТА ---- */
+.about__inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+}
+
+/* ---- СТИКЕРЫ (ЗАПИСКИ) ---- */
+.about__notes-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Все стикеры: 322×211, border 2px #000 */
+.note {
+    padding: 20px 24px;
+    font-family: var(--f-serif);
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 120%;
+    box-shadow: 3px 4px 14px rgba(0,0,0,0.1);
+    position: absolute;
+    width: 322px;
+    height: 211px;
+    border: 2px solid #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Оранжевый стикер — #FFD96C, текст тёмно-оранжевый #DB6338 */
+.note--orange {
+    background: #FFD96C;
+    color: #DB6338;
+}
+
+/* Розовый стикер — #FF70AB, текст бежевый #FFF5D9 */
+.note--pink {
+    background: #FF70AB;
+    color: #FFF5D9;
+}
+
+/* note--1 (оранж): top 149, left 135, rotate -6° */
+.note--1 {
+    top: 84px;
+    left: 135px;
+    transform: rotate(-6deg);
+    z-index: 3;
+}
+
+/* note--2 (розов): top 313, left 389, rotate 7° */
+.note--2 {
+    top: 248px;
+    left: 389px;
+    transform: rotate(7deg);
+    z-index: 4;
+}
+
+/* note--3 (оранж): top 475, left 100, rotate -8.01° */
+.note--3 {
+    top: 410px;
+    left: 100px;
+    transform: rotate(-8.01deg);
+    z-index: 5;
+    width: 322px;
+}
+
+/* note--4 (розов): top 625, left 347, rotate 4° */
+.note--4 {
+    top: 560px;
+    left: 347px;
+    transform: rotate(4deg);
+    z-index: 6;
+    width: 322px;
+}
+
+/* ---- ФОТО (правая сторона) ---- */
+.about__photos-col {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.about__photo {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    position: absolute;
+}
+
+/* pic 1: 323×432, top 125, left 767, radius 20 */
+.about__photo--top {
+    width: 323px;
+    height: 432px;
+    top: 60px;
+    left: 767px;
+    z-index: 3;
+}
+
+/* pic 2: 323×432, top 471, left 1017, radius 20 */
+.about__photo--bottom {
+    width: 323px;
+    height: 432px;
+    top: 340px;
+    left: 1017px;
+    z-index: 2;
+}
+
+/* Ряд фото — больше не нужен как flex, фото абсолютные */
+.about__photo-row {
+    display: contents;
+}
+
+/* ---- ПУЗЫРЬ "Вид на фотокомнату изнутри" ---- */
+/* bubble: 221×155, top 329, left 1119 — без наклона */
+.about__bubble {
+    position: absolute;
+    width: 221px;
+    height: 155px;
+    top: 200px;
+    left: 1119px;
+    background: url('bubble.png') no-repeat center / contain;
+    border: none;
+    border-radius: 0;
+    font-family: var(--f-serif);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 7;
+    padding: 0 30px 10px;
+}
+
+/* Текст внутри пузыря — наклон -9° */
+.about__bubble span {
+    transform: rotate(9deg);
+    display: block;
+}
+
+/* Хвостик пузыря — не нужен, встроен в картинку */
+.about__bubble-tail {
+    display: none;
+}
+
+
+/* ================================================================
+   БЛОК 4 (СЕРТИФИКАТЫ): Переопределения для страницы сертификатов
+   Только 3 карточки, другие позиции, зелёный блоб смещён
+   ================================================================ */
+
+/* Секция чуть ниже — 3 карточки, без 4й */
+.about--cert {
+    height: 799px;
+}
+
+/* Арка на сертификатах — к низу секции */
+.about--cert .blob--arch {
+    top: 432px;
+}
+
+/* Зелёный блоб на сертификатах */
+.about--cert .blob--green {
+    top: 0px;
+    left: 250px;
+}
+
+/* card 1 (оранж): rotate -7° */
+.about--cert .note--1 {
+    top: 80px;
+    left: 135px;
+    transform: rotate(-7deg);
+    z-index: 3;
+}
+
+/* card 2 (розов): rotate 6° — ПОВЕРХ оранжевых */
+.about--cert .note--2 {
+    top: 252px;
+    left: 389px;
+    transform: rotate(6deg);
+    z-index: 10;
+}
+
+/* card 3 (оранж): rotate -4° */
+.about--cert .note--3 {
+    top: 406px;
+    left: 100px;
+    transform: rotate(-4deg);
+    z-index: 3;
+}
+
+/* Нет 4й карточки на сертификатах */
+.about--cert .note--4 {
+    display: none;
+}
+
+/* Пузырь на сертификатах — на верху нижней фотки */
+.about--cert .about__bubble {
+    top: 200px;
+}
+
+
+/* ================================================================
+   БЛОК 5 и 8: ФОТОСЕТКИ (PHOTO GRIDS)
+   Сетка из фотографий: 4 колонки
+   Блок 5 = 4×3 (12 фото) — верхний грид
+   Блок 8 = 4×4 (16 фото) — нижний грид
+   ================================================================ */
+
+/* Контейнер сетки */
+.pgrid {
+    display: grid;                          /* CSS Grid */
+    grid-template-columns: repeat(4, 1fr);  /* 4 равных колонки */
+}
+
+/* Одна ячейка фото */
+.pg {
+    height: 260px;                  /* Высота ячейки — 260px */
+    overflow: hidden;               /* Обрезать фото по краям */
+}
+
+/* Пустая ячейка (если фото не хватает) */
+.pg--empty {
+    background: var(--beige);       /* Бежевый фон — сливается со страницей */
+}
+
+
+/* ================================================================
+   БЛОК 6: ИНФОРМАЦИЯ О ФОНАХ (BACKDROP)
+   Белый блок с жёлтой карточкой "ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН..."
+   ================================================================ */
+
+/* Контейнер — белый фон */
+.backdrop-white {
+    background: var(--white);       /* Белый фон */
+    padding: 40px 60px;
+    text-align: center;
+}
+
+/* Жёлтая карточка с текстом */
+.backdrop__card {
+    background: var(--yellow);      /* Жёлтый фон #FFD96C */
+    border-radius: 18px;            /* Закруглённые углы */
+    padding: 24px 48px;             /* Внутренние отступы */
+    display: inline-block;          /* Ширина по содержимому */
+    max-width: 860px;
+    margin: 0 auto 20px;
+}
+
+/* Текст внутри жёлтой карточки */
+.backdrop__text {
+    font-family: var(--f-sans);     /* Inter */
+    font-size: 16px;
+    font-weight: 700;               /* Жирный */
+    text-transform: uppercase;
+    color: var(--orange);           /* Оранжевый цвет текста */
+    line-height: 160%;
+}
+
+/* Сноска со звёздочкой */
+.backdrop__note {
+    font-family: var(--f-serif);    /* Libre Baskerville */
+    font-size: 14px;
+    color: var(--black);
+}
+
+
+/* ================================================================
+   БЛОК 7: ЦИТАТА (QUOTE)
+   Розовая секция с белым текстом и волной сверху
+   "SELF — ЭТО ИДЕАЛЬНОЕ МЕСТО..."
+   ================================================================ */
+
+/* Контейнер секции */
+.quote-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Волна сверху — переход от белого к розовому */
+.quote__wave {
+    height: 100px;                  /* Высота волны */
+    background: var(--white);       /* Фон ЗА волной — белый (от предыдущей секции) */
+}
+
+.quote__wave svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Розовый блок с текстом */
+.quote__body {
+    background: var(--pink);        /* Розовый фон #FA99C0 */
+    padding: 40px 60px 60px;
+    text-align: center;
+}
+
+/* Текст цитаты — БЕЛЫЙ */
+.quote__text {
+    font-family: var(--f-sans);     /* Inter */
+    font-size: 22px;
+    font-weight: 700;               /* Жирный */
+    text-transform: uppercase;
+    color: var(--white);            /* ← БЕЛЫЙ цвет текста на розовом фоне */
+    line-height: 160%;
+    max-width: 700px;               /* Максимальная ширина текста */
+    margin: 0 auto;                 /* Центрирование */
+}
+
+
+/* ================================================================
+   БЛОК 9: ПОДВАЛ (FOOTER)
+   Оранжевый блок с текстом и иконками соцсетей
+   ================================================================ */
+
+/* Контейнер футера */
+.footer {
+    background: var(--orange);      /* Оранжевый фон */
+    padding: 24px 60px 36px;
+}
+
+/* Верхняя строка: "Study project" | "Icons by Icons8" | "Not for commercial use!" */
+.footer__top {
+    display: flex;
+    justify-content: space-between; /* Текст по краям и по центру */
+    margin-bottom: 20px;
+    font-family: var(--f-serif);
+    font-size: 14px;
+    color: var(--black);            /* Чёрный текст */
+}
+
+/* Контейнер иконок соцсетей */
+.footer__socials {
+    display: flex;
+    justify-content: center;        /* По центру */
+    gap: 18px;                      /* Расстояние между иконками */
+}
+
+/* ================================================================
+   ИКОНКИ СОЦСЕТЕЙ В ФУТЕРЕ
+   Иконки — PNG-картинки с жёлтым кольцом и оранжевым кругом.
+   Чтобы изменить размер — меняй width/height у .soc и .soc__icon
+   ================================================================ */
+
+/* Контейнер одной иконки */
+.soc {
+    width: 56px;                    /* Размер контейнера — меняй тут */
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;               /* Фон не нужен — он в самой картинке */
+    border: none;                   /* Обводка не нужна — она в картинке */
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+/* Картинка иконки внутри контейнера */
+.soc__icon {
+    width: 56px;                    /* Размер картинки — меняй тут */
+    height: 56px;
+    object-fit: contain;            /* Сохраняет пропорции */
+}
+
+/* Иконка при наведении */
+.soc:hover {
+    transform: translateY(-3px);    /* Поднимается вверх */
+}
+
+
+/* ================================================================
+   =============================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ "О СТУДИИ" (about.html)
+   =============================================
+   ================================================================ */
+
+
+/* ================================================================
+   БЛОК: БАННЕР СТРАНИЦЫ "О СТУДИИ"
+   Большое фото на оранжевом фоне
+   ================================================================ */
+.about-hero {
+    background: var(--orange);
+    padding: 0;
+}
+
+.about-hero__photo {
+    width: 100%;
+    overflow: hidden;
+}
+
+
+/* ================================================================
+   БЛОК: ПРИВЕТСТВЕННАЯ КАРТОЧКА
+   Жёлтая карточка "ДОБРО ПОЖАЛОВАТЬ В ФОТОСТУДИЮ SELF!"
+   ================================================================ */
+.welcome {
+    background: var(--orange);      /* Оранжевый фон (продолжение hero) */
+    padding: 0 60px 40px;
+    text-align: center;
+}
+
+.welcome__card {
+    background: var(--yellow);      /* Жёлтая карточка */
+    border-radius: 18px;
+    padding: 28px 48px;
+    max-width: 900px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+.welcome__card p {
+    font-family: var(--f-sans);     /* Inter */
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--orange);           /* Оранжевый текст */
+    line-height: 160%;
+}
+
+
+/* ================================================================
+   БЛОК: ИСТОРИЯ СТУДИИ (Стикеры + фото)
+   Аналог блока About на главной — стикеры про Арину
+   ================================================================ */
+.about-story {
+    position: relative;
+    padding: 50px 60px 50px;
+    min-height: 560px;
+    overflow: hidden;
+    background: var(--beige);
+}
+
+/* Внутренний контейнер — стикеры слева, фото справа */
+.about-story__inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+}
+
+/* Зелёный блоб внутри about-story */
+.about-story .blob--green {
+    width: 280px;
+    height: 220px;
+    background: var(--green);
+    opacity: 0.75;
+    top: 20px;
+    left: 0;
+    border-radius: 50% 70% 40% 60%;
+}
+
+/* Арка внутри about-story */
+.about-story .blob--arch {
+    width: 360px;
+    height: 180px;
+    background: var(--orange);
+    bottom: 30px;
+    left: 200px;
+    border-radius: 180px 180px 0 0;
+    z-index: 1;
+}
+
+.about-story .blob--arch::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 60px;
+    background: var(--beige);
+    border-radius: 60px 60px 0 0;
+}
+
+
+/* ================================================================
+   БЛОК: ФОТО-КАРУСЕЛЬ
+   Горизонтальная прокрутка фото с кнопкой-стрелкой
+   ================================================================ */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    background: var(--beige);
+}
+
+/* Дорожка с фото — прокручивается горизонтально */
+.carousel__track {
+    display: flex;
+    overflow-x: auto;               /* Горизонтальная прокрутка */
+    scroll-snap-type: x mandatory;  /* Фото "прилипают" при прокрутке */
+    gap: 4px;
+    scrollbar-width: none;          /* Скрыть скроллбар (Firefox) */
+    -ms-overflow-style: none;       /* Скрыть скроллбар (IE/Edge) */
+}
+
+/* Скрыть скроллбар (Chrome/Safari) */
+.carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Одно фото в карусели */
+.carousel__item {
+    flex: 0 0 25%;                  /* Ширина = 25% (4 фото видны одновременно) */
+    height: 300px;
+    scroll-snap-align: start;       /* Прилипание к началу */
+}
+
+/* Кнопка-стрелка ">" справа */
+.carousel__arrow {
+    position: absolute;
+    right: 20px;                    /* Отступ от правого края */
+    top: 50%;
+    transform: translateY(-50%);    /* Центрирование по вертикали */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;             /* Круглая кнопка */
+    border: none;
+    background: var(--white);       /* Белый фон */
+    color: var(--black);
+    font-size: 28px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.carousel__arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Карусель на сертификатах — высота 626px по макету */
+.carousel--cert .carousel__item {
+    height: 626px;
+    flex: 0 0 calc(100% / 3.5);
+    overflow: hidden;
+}
+
+.carousel--cert .carousel__track {
+    gap: 0;
+}
+
+
+/* ================================================================
+   БЛОК: ЧАСЫ РАБОТЫ
+   Жёлтая pill-карточка "ЧАСЫ РАБОТЫ СТУДИИ — ЕЖЕДНЕВНО, С 10 ДО 19."
+   ================================================================ */
+.hours {
+    background: var(--beige);
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.hours__card {
+    background: var(--yellow);      /* Жёлтый фон */
+    border-radius: 40px;            /* Сильное закругление — pill-форма */
+    padding: 20px 48px;
+    display: inline-block;
+}
+
+.hours__card p {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--black);
+    line-height: 150%;
+}
+
+
+/* ================================================================
+   БЛОК: КАРТА + АДРЕС
+   Оранжевый блок: карта слева, адрес справа
+   ================================================================ */
+.location {
+    background: var(--orange);
+    padding: 40px 60px;
+    display: flex;                  /* Карта и адрес в ряд */
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Карта (левая часть) */
+.location__map {
+    flex: 1;                        /* Занимает половину */
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+/* Блок с адресом (правая часть) */
+.location__info {
+    flex: 1;
+}
+
+/* Заголовок "НАШ АДРЕС:" */
+.location__label {
+    font-family: var(--f-sans);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+}
+
+/* Текст адреса */
+.location__address {
+    font-family: var(--f-serif);
+    font-size: 16px;
+    color: var(--white);
+    line-height: 160%;
+}
+
+
+/* ================================================================
+   БЛОК: КОНТАКТ-ФОРМА
+   Бежевый блок: логотип SELF слева, форма с полями справа
+   ================================================================ */
+.contact {
+    background: var(--beige);
+    padding: 60px;
+    display: flex;                  /* Лого слева, форма справа */
+    gap: 60px;
+    align-items: flex-start;
+}
+
+/* Левая колонка — логотип + "Договор оферты" */
+.contact__left {
+    flex: 0 0 300px;               /* Фиксированная ширина 300px */
+}
+
+/* Текст "SELF" крупно */
+.contact__logo {
+    font-family: var(--f-sans);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--btn-to);           /* Розово-фиолетовый */
+    letter-spacing: 4px;
+    margin-bottom: 8px;
+}
+
+/* Подпись "ФОТОСТУДИЯ АВТОПОРТРЕТА" */
+.contact__sub {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--orange);
+    margin-bottom: 24px;
+}
+
+/* Кнопка "ДОГОВОР ОФЕРТЫ" */
+.contact__link {
+    display: inline-block;
+    border: 2px solid var(--orange);    /* Оранжевая рамка */
+    border-radius: 30px;                /* Овальная форма */
+    padding: 10px 24px;
+    font-family: var(--f-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--orange);
+    transition: background 0.2s;
+}
+
+/* При наведении — заливается оранжевым */
+.contact__link:hover {
+    background: var(--orange);
+    color: var(--white);
+}
+
+/* Правая колонка — форма */
+.contact__right {
+    flex: 1;
+}
+
+/* Вступительный текст */
+.contact__intro {
+    font-family: var(--f-serif);
+    font-size: 15px;
+    line-height: 160%;
+    margin-bottom: 24px;
+}
+
+/* Подписи полей "АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ", "ВВЕДИТЕ ВАШ ВОПРОС" */
+.contact__label {
+    display: block;
+    font-family: var(--f-sans);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--orange);           /* Оранжевый цвет подписи */
+    margin-bottom: 6px;
+    margin-top: 16px;
+}
+
+/* Поля ввода (email и текстовое поле) */
+.contact__input,
+.contact__textarea {
+    width: 100%;
+    border: 2px solid var(--orange);    /* Оранжевая рамка */
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: var(--f-serif);
+    font-size: 15px;
+    background: var(--white);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+/* Поле при фокусе — рамка меняет цвет на розовый */
+.contact__input:focus,
+.contact__textarea:focus {
+    border-color: var(--btn-to);        /* Розово-фиолетовая рамка */
+}
+
+/* Текстовое поле — выше чем email */
+.contact__textarea {
+    height: 100px;
+    resize: vertical;               /* Можно менять высоту мышкой */
+}
+
+/* Кнопка "ОТПРАВИТЬ" */
+.contact__btn {
+    display: inline-block;
+    margin-top: 20px;
+    background: linear-gradient(135deg, var(--btn-from) 20%, var(--btn-to) 91%);
+        /* Градиент как у кнопки "Записаться" */
+    color: var(--white);
+    font-family: var(--f-sans);
+    font-weight: 600;
+    font-size: 20px;
+    text-transform: uppercase;
+    padding: 16px 48px;
+    border-radius: 40px;            /* Pill-форма */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 6px 24px rgba(229, 62, 132, 0.35);
+    transition: transform 0.3s;
+}
+
+.contact__btn:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================================================================
+   =============================================
+   СТИЛИ ДЛЯ СТРАНИЦЫ "АРЕНДА ЗАЛОВ" (rooms.html)
+   =============================================
+   ================================================================ */
+
+
+/* ================================================================
+   БЛОК: ВЫПАДАЮЩЕЕ МЕНЮ В НАВИГАЦИИ
+   «АРЕНДА ЗАЛОВ» + подпункты раскрываются ВНИЗ за навигацию.
+   Навигация НЕ сдвигается при наведении.
+   Кольцо ровное, такого же размера как у других ссылок.
+   ================================================================ */
+
+/* Контейнер dropdown */
+.nav__dropdown {
+    position: relative;
+    z-index: 50;
+}
+
+/* Триггер — всегда одинаковый размер, чтобы навигация не прыгала */
+.nav__dropdown-trigger {
+    position: relative;
+    text-align: center;
+    border: 4px solid transparent;
+    border-radius: 30px;
+    padding: 8px 26px 10px;         /* Совпадает с .nav__link--active */
+}
+
+/* Подпункты — абсолютно позиционированы ВНИЗ */
+.nav__dropdown-subitems {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -4px;
+    right: -4px;
+    background: var(--beige);       /* Бежевый фон dropdown */
+    border: 4px solid #E93D84;
+    border-top: none;
+    border-radius: 0 0 20px 20px;
+    padding: 4px 8px 8px;
+    z-index: 52;
+}
+
+/* При наведении — показать подпункты */
+.nav__dropdown-trigger:hover .nav__dropdown-subitems {
+    display: block;
+}
+
+/* При наведении — убрать нижнее скругление у кольца */
+.nav__dropdown-trigger:hover {
+    border-radius: 30px 30px 0 0 !important;
+}
+
+/* Надпись АРЕНДА ЗАЛОВ — единый стиль на ВСЕХ страницах */
+/* Всегда имеет underline (прозрачный или видимый) чтобы высота не прыгала */
+.nav__dropdown-label {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: var(--orange);
+    text-decoration: underline;
+    text-decoration-color: transparent;  /* Невидимый по умолчанию */
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+    display: block;
+    line-height: 1.2;                    /* Фиксированная высота строки */
+}
+
+/* Когда аренда залов активна — чёрный текст + подчёркивание */
+.nav__link--active .nav__dropdown-label {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--black);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* При наведении на неактивный триггер — чёрный текст + подчёркивание */
+.nav__dropdown-trigger:not(.nav__link--active):hover .nav__dropdown-label {
+    color: var(--black);
+    text-decoration: underline;
+    text-decoration-color: var(--black);
+    text-underline-offset: 4px;
+    text-decoration-thickness: 2px;
+}
+
+/* === Активная страница (залы) — розовое кольцо + БЕЖЕВЫЙ фон === */
+.nav__dropdown-trigger.nav__link--active {
+    border-color: #E93D84;
+    background: var(--beige) !important;
+    z-index: 51;
+}
+
+/* === Неактивные страницы — кольцо появляется при наведении === */
+.nav__dropdown-trigger:not(.nav__link--active):hover {
+    border-color: #E93D84;
+    background: var(--beige);
+    z-index: 51;
+}
+
+/* Пункт подменю — БЕЗ подчёркивания */
+.nav__dropdown-item {
+    display: block;
+    padding: 3px 12px;
+    font-family: var(--f-sans);
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--black);
+    text-align: center;
+    border-radius: 16px;
+    transition: background 0.2s, color 0.2s;
+    margin: 2px 0;
+    text-decoration: none;
+}
+
+.nav__dropdown-item:hover {
+    background: #FFD9A4;
+    color: #E93D84;
+    text-decoration: none;
+}
+
+.nav__dropdown-item--active {
+    font-weight: 400;
+    color: #E93D84;
+    background: #FFD9A4;
+    border-radius: 16px;
+    text-decoration: none;
+}
+
+
+/* ================================================================
+   БЛОК: HERO ДЛЯ СТРАНИЦЫ АРЕНДЫ ЗАЛОВ
+   Оранжевый блок с крупным заголовком по центру
+   ================================================================ */
+.rooms-hero {
+    padding: 0 60px 50px;
+    text-align: center;
+    overflow: hidden;               /* Скрыть волну за пределами */
+}
+
+.rooms-hero__inner {
+    position: relative;
+    z-index: 1;
+    padding-top: 60px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.rooms-hero__title {
+    font-family: var(--f-sans);
+    font-size: 80px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 20px;
+    line-height: 100%;
+}
+
+.rooms-hero__desc {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+    line-height: 160%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* ================================================================
+   БЛОК: ТАРИФЫ АРЕНДЫ
+   Таблицы с ценами, разделённые на две колонки
+   ================================================================ */
+.tariffs {
+    background: var(--beige);
+    padding: 40px 60px 50px;
+}
+
+.tariffs__heading-wrap {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.tariffs__heading {
+    font-family: var(--f-sans);
+    font-size: 22px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+    display: inline-block;
+    border: 2px solid var(--orange);
+    border-radius: 40px;
+    padding: 14px 40px;
+}
+
+.tariffs__columns {
+    display: flex;
+    gap: 60px;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.tariffs__col {
+    flex: 1;
+    max-width: 440px;
+}
+
+.tariffs__col-title {
+    font-family: var(--f-sans);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--black);
+    margin-bottom: 16px;
+    line-height: 140%;
+}
+
+.tariffs__row {
+    display: flex;
+    align-items: baseline;
+    font-family: var(--f-serif);
+    font-size: 15px;
+    color: var(--black);
+    margin-bottom: 6px;
+    gap: 6px;
+}
+
+.tariffs__row span:first-child {
+    white-space: nowrap;
+}
+
+.tariffs__row span:last-child {
+    white-space: nowrap;
+}
+
+.tariffs__dots {
+    flex: 1;
+    border-bottom: 1px dotted #999;
+    margin: 0 4px;
+    min-width: 20px;
+    position: relative;
+    top: -4px;
+}
+
+.tariffs__dots-inline {
+    display: inline-block;
+    width: 60px;
+    border-bottom: 1px dotted #999;
+    margin: 0 6px;
+    position: relative;
+    top: -3px;
+}
+
+.tariffs__note {
+    font-family: var(--f-serif);
+    font-size: 13px;
+    color: #555;
+    text-align: left;
+    max-width: 940px;
+    margin: 0 auto 8px;
+}
+
+.tariffs__extra {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.tariffs__extra-title {
+    font-family: var(--f-sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--black);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.tariffs__footnote {
+    font-family: var(--f-serif);
+    font-size: 12px;
+    color: #777;
+    line-height: 160%;
+    margin-top: 20px;
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tariffs__dishes {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.tariffs__dishes-title {
+    font-family: var(--f-sans);
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    color: var(--black);
+    margin-bottom: 20px;
+}
+
+.tariffs__dishes-list {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tariffs__table-wrap {
+    max-width: 940px;
+    margin: 0 auto;
+}

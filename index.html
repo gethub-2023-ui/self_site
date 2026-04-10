@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELF — фотостудия</title>
+    <!-- Подключаем файл стилей. Если переименуешь CSS файл — измени имя здесь -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============================================================
+     БЛОК 1: НАВИГАЦИЯ (HEADER)
+     Жёлтая шапка сайта с меню
+     
+     Чтобы изменить текст пунктов — меняй текст внутри <a>
+     Чтобы изменить какая страница "активная" — перемести класс nav__link--active
+     Чтобы изменить ссылку — меняй href="файл.html"
+     ============================================================ -->
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="nav__link nav__link--active">ГЛАВНАЯ</a>
+        <a href="certificates.html" class="nav__link">СЕРТИФИКАТЫ</a>
+        <a href="index.html" class="nav__logo"><img src="logo-self.svg" alt="SELF" class="nav__logo-img"></a>
+        <div class="nav__dropdown">
+            <div class="nav__dropdown-trigger">
+                <a href="room-small.html" class="nav__dropdown-label">АРЕНДА ЗАЛОВ</a>
+                <div class="nav__dropdown-subitems">
+                    <a href="room-small.html" class="nav__dropdown-item">Малый зал</a>
+                    <a href="room-big.html" class="nav__dropdown-item">Большой зал</a>
+                </div>
+            </div>
+        </div>
+        <a href="about.html" class="nav__link">О СТУДИИ</a>
+    </nav>
+</header>
+
+
+<!-- Бежевый фон #FFF5D9 по бокам оранжевого — оборачивает hero и duration -->
+<div class="hero-duration-wrap">
+
+<!-- ============================================================
+     БЛОК 2: ГЕРОЙ (HERO)
+     Главный экран — оранжевый фон, фото слева (заходит на текст),
+     текст + кнопка справа. Без волны.
+     По бокам рыжий фон #FFF5D9
+     ============================================================ -->
+<section class="hero">
+
+    <div class="hero__inner">
+        <!-- ФОТО слева — реальное фото без белого фона -->
+        <div class="hero__photo-col">
+            <div class="hero__photo-wrap">
+                <img src="title pic.svg" alt="Фото студии SELF" class="hero__photo-img">
+            </div>
+        </div>
+
+        <!-- ТЕКСТ справа -->
+        <div class="hero__text-col">
+            <h1 class="hero__title">[СЭЛФ] -</h1>
+            <p class="hero__desc">фотостудия без фотографа для создания уникальных автопортретов. В фотокомнате установлено зеркало, за которым скрыта камера. Управление съёмкой осуществляете вы — с помощью компактного пультика.</p>
+            <img src="button для главной.svg" class="hero__btn"></a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 3: ДЛИТЕЛЬНОСТЬ СЪЁМКИ (DURATION)
+     Оранжевый фон, жёлтый заголовок, 3 карточки с розовой рамкой
+     
+     Чтобы добавить 4-ю карточку — скопируй <div class="duration__card">...</div>
+     Чтобы изменить цену — меняй текст внутри <span class="duration__price">
+     ============================================================ -->
+<section class="duration">
+    <h2 class="duration__heading">МОЖНО ВЫБРАТЬ РАЗНУЮ ДЛИТЕЛЬНОСТЬ СЪЁМКИ:</h2>
+    
+    <div class="duration__grid">
+        <!-- Карточка 1: 25 минут -->
+        <div class="duration__card">
+            <span class="duration__time">25 МИНУТ</span>          <!-- Время -->
+            <span class="duration__price">2000 рублей</span>       <!-- Цена (розовый цвет) -->
+            <p class="duration__text">подойдёт для автопортретов, семейных съёмок, парных съёмок, съёмок с питомцами или детьми</p>  <!-- Описание -->
+        </div>
+        
+        <!-- Карточка 2: 40 минут -->
+        <div class="duration__card">
+            <span class="duration__time">40 МИНУТ</span>
+            <span class="duration__price">3500–3700 рублей</span>
+            <p class="duration__text">средняя продолжительность съёмки, подойдёт для смены нескольких образов или семейной съёмки</p>
+        </div>
+        
+        <!-- Карточка 3: 90 минут -->
+        <div class="duration__card">
+            <span class="duration__time">90 МИНУТ</span>
+            <span class="duration__price">4500–5500 рублей</span>
+            <p class="duration__text">подойдёт для больших компаний, семейной съёмки или для съёмок во множестве образов</p>
+        </div>
+    </div>
+</section>
+
+</div><!-- /hero-duration-wrap -->
+
+
+<!-- ============================================================
+     Бежевый фон, декоративные пятна, стикеры с текстом,
+     фото интерьера, пузырь "Вид на фотокомнату"
+     ============================================================ -->
+<!-- Лавандовая полоска СВЕРХУ -->
+<div class="about__stripe-top"></div>
+
+<section class="about">
+    <!-- Декоративные пятна (блобы) — размер/цвет/позиция в CSS -->
+    <div class="blob blob--green"></div>   <!-- Зелёное пятно слева -->
+    <div class="blob blob--yellow"></div>  <!-- Жёлтый круг справа -->
+    <div class="blob blob--arch"></div>    <!-- Оранжевая арка снизу -->
+
+    <div class="about__inner">
+        <!-- СТИКЕРЫ (записки) — левая колонка -->
+        <div class="about__notes-area">
+            <!-- Стикер 1 — оранжевый, наклон влево -->
+            <!-- note--orange = оранжевый цвет, note--1 = позиция/наклон -->
+            <div class="note note--orange note--1">
+                <p>Записаться на съёмку можно онлайн через этот сайт или через администратора. Бронирование съёмки происходит после полной оплаты.</p>
+            </div>
+            
+            <!-- Стикер 2 — розовый, наклон вправо -->
+            <div class="note note--pink note--2">
+                <p>В студии вас встретит администратор и проведёт небольшой инструктаж. После съёмки он расскажет о том, как получить готовые кадры.</p>
+            </div>
+            
+            <!-- Стикер 3 — оранжевый -->
+            <div class="note note--orange note--3">
+                <p>В фотокомнате перед вами будет зеркало, за которым спрятана камера. В руках будет небольшой пультик - им можно будет делать кадры.</p>
+            </div>
+            
+            <!-- Стикер 4 — розовый -->
+            <div class="note note--pink note--4">
+                <p>Количество кадров неограниченно. Также в фотокомнате есть реквизит, который можно использовать во время съёмки.</p>
+            </div>
+        </div>
+
+        <!-- ФОТО — абсолютное позиционирование по макету -->
+        <div class="about__photos-col">
+            <!-- pic 1: Верхнее фото интерьера (323×432, top 125, left 767) -->
+            <div class="about__photo about__photo--top">
+                <img src="photo1.png" alt="Фото интерьера" style="width:100%;height:100%;object-fit:cover">
+            </div>
+            
+            <!-- pic 2: Нижнее фото фотокомнаты (323×432, top 471, left 1017) -->
+            <div class="about__photo about__photo--bottom">
+                <img src="photo2.png" alt="Фото фотокомнаты" style="width:100%;height:100%;object-fit:cover">
+            </div>
+            
+            <!-- Пузырь с текстом (221×155, top 329, left 1119) -->
+            <div class="about__bubble">
+                <span>Вид на фотокомнату изнутри.</span>
+                <div class="about__bubble-tail"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Лавандовая полоска СНИЗУ -->
+<div class="about__stripe-bottom"></div>
+
+
+<!-- ============================================================
+     БЛОК 5: ФОТОСЕТКА ВЕРХНЯЯ (4 колонки × 3 ряда = 12 фото)
+     
+     ВСТАВИТЬ ФОТО: замени каждый <div class="placeholder">
+     на <img src="фото.jpg" alt="" style="width:100%;height:100%;object-fit:cover">
+     ============================================================ -->
+<section class="pgrid pgrid--top">
+    <div class="pg"><div class="placeholder">1</div></div>
+    <div class="pg"><div class="placeholder">2</div></div>
+    <div class="pg"><div class="placeholder">3</div></div>
+    <div class="pg"><div class="placeholder">4</div></div>
+    <div class="pg"><div class="placeholder">5</div></div>
+    <div class="pg"><div class="placeholder">6</div></div>
+    <div class="pg"><div class="placeholder">7</div></div>
+    <div class="pg"><div class="placeholder">8</div></div>
+    <div class="pg"><div class="placeholder">9</div></div>
+    <div class="pg"><div class="placeholder">10</div></div>
+    <div class="pg"><div class="placeholder">11</div></div>
+    <div class="pg"><div class="placeholder">12</div></div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 6: ИНФОРМАЦИЯ О ФОНАХ (BACKDROP)
+     Белый фон, жёлтая карточка с текстом, сноска
+     ============================================================ -->
+<section class="backdrop-white">
+    <!-- Жёлтая карточка с основным текстом -->
+    <div class="backdrop__card">
+        <p class="backdrop__text">ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН ИЗ ДОСТУПНЫХ ЦВЕТОВ.*<br>АКТУЛЬНЫЕ ЦВЕТА ФОНОВ НА ДАННЫЙ МОМЕНТ — БЕЛЫЙ, РУБИНОВЫЙ, РОЗОВЫЙ, ИНДИГО, ЧЁРНЫЙ.</p>
+    </div>
+    <!-- Сноска мелким текстом -->
+    <p class="backdrop__note">*В тарифах съёмки на 25 и 40 минут можно выбрать два цвета фона, в тарифе на 90 минут — три цвета.</p>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 7: ЦИТАТА (QUOTE)
+     Розовая волна переходит в розовый фон с белым текстом
+     ============================================================ -->
+<section class="quote-section">
+    <!-- Волна — переход от белого (backdrop) к розовому -->
+    <!-- Цвет волны fill="#FA99C0" — должен совпадать с фоном .quote__body -->
+    <div class="quote__wave">
+        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+            <path d="M0,100 L0,60 Q200,0 450,50 Q700,100 950,40 Q1150,0 1350,50 L1440,30 L1440,100 Z" fill="#FA99C0"/>
+        </svg>
+    </div>
+    <!-- Текст цитаты — белый на розовом -->
+    <div class="quote__body">
+        <p class="quote__text">SELF — ЭТО ИДЕАЛЬНОЕ МЕСТО ДЛЯ ТОГО, ЧТОБЫ ПРОВЕСТИ ВРЕМЯ НАЕДИНЕ С СОБОЙ ИЛИ БЛИЗКИМИ И ЗАПЕЧАТЛЕТЬ СВОИ САМЫЕ ИСКРЕННИЕ ЭМОЦИИ.</p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 8: ФОТОСЕТКА НИЖНЯЯ (4 колонки × 4 ряда = 16 фото)
+     ============================================================ -->
+<section class="pgrid pgrid--btm">
+    <div class="pg"><div class="placeholder">1</div></div>
+    <div class="pg"><div class="placeholder">2</div></div>
+    <div class="pg"><div class="placeholder">3</div></div>
+    <div class="pg"><div class="placeholder">4</div></div>
+    <div class="pg"><div class="placeholder">5</div></div>
+    <div class="pg"><div class="placeholder">6</div></div>
+    <div class="pg"><div class="placeholder">7</div></div>
+    <div class="pg"><div class="placeholder">8</div></div>
+    <div class="pg"><div class="placeholder">9</div></div>
+    <div class="pg"><div class="placeholder">10</div></div>
+    <div class="pg"><div class="placeholder">11</div></div>
+    <div class="pg"><div class="placeholder">12</div></div>
+    <div class="pg"><div class="placeholder">13</div></div>
+    <div class="pg"><div class="placeholder">14</div></div>
+    <div class="pg"><div class="placeholder">15</div></div>
+    <div class="pg"><div class="placeholder">16</div></div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 9: ПОДВАЛ (FOOTER)
+     Оранжевый фон, текст, иконки соцсетей в жёлтых кружках
+     ============================================================ -->
+<footer class="footer">
+    <div class="footer__top">
+        <span>Study project</span>
+        <span>Icons by Icons8</span>
+        <span>Not for commercial use!</span>
+    </div>
+    <div class="footer__socials">
+        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+    </div>
+</footer>
+
+
+<script>
+    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var menu = this.closest('.nav__dropdown-menu');
+            if (menu) menu.style.display = 'none';
+            setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SELF — О студии</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- HEADER (О СТУДИИ active) -->
+<header class="header">
+    <nav class="nav">
+        <a href="index.html" class="nav__link">ГЛАВНАЯ</a>
+        <a href="certificates.html" class="nav__link">СЕРТИФИКАТЫ</a>
+        <a href="index.html" class="nav__logo"><img src="logo-self.svg" alt="SELF" class="nav__logo-img"></a>
+        <div class="nav__dropdown">
+            <div class="nav__dropdown-trigger">
+                <a href="room-small.html" class="nav__dropdown-label">АРЕНДА ЗАЛОВ</a>
+                <div class="nav__dropdown-subitems">
+                    <a href="room-small.html" class="nav__dropdown-item">Малый зал</a>
+                    <a href="room-big.html" class="nav__dropdown-item">Большой зал</a>
+                </div>
+            </div>
+        </div>
+        <a href="about.html" class="nav__link nav__link--active">О СТУДИИ</a>
+    </nav>
+</header>
+
+<!-- HERO BANNER -->
+<section class="about-hero">
+    <div class="about-hero__photo"><div class="placeholder" style="height:500px">Фото студии</div></div>
+</section>
+
+<!-- WELCOME CARD -->
+<section class="welcome">
+    <div class="welcome__card">
+        <p>ДОБРО ПОЖАЛОВАТЬ В ФОТОСТУДИЮ SELF! НАШИ ДВЕРИ ОТКРЫТЫ ДЛЯ ВСЕХ — ДЛЯ ТЕХ, КТО ЛЮБИТ ФОТОГРАФИРОВАТЬСЯ, И ДЛЯ ТЕХ, КТО НЕ ОЧЕНЬ. В НАШЕЙ СТУДИИ НЕТ ФОТОГРАФА, И ВСЕ КАДРЫ ВЫ СОЗДАЁТЕ САМИ, НАЕДИНЕ С СОБОЙ.</p>
+    </div>
+</section>
+
+<!-- ABOUT NOTES + PHOTOS -->
+<section class="about-story">
+    <div class="blob blob--green"></div>
+    <div class="blob blob--arch"></div>
+    <div class="about-story__inner">
+        <div class="about__notes-area">
+            <div class="note note--orange note--1"><p>Арина — основательница фотостудии. Когда-то давно она загорелась идеей создать фотостудию для всех и каждого.</p></div>
+            <div class="note note--pink note--2"><p>Вдохновившая идеей, она создала эту студию, где нет стереотипов и рамок, здесь каждый может выразить свою индивидуальность.</p></div>
+            <div class="note note--orange note--3"><p>Мы верим, что фотография — это не только способ запечатлеть момент, но и возможность рассказать свою историю.</p></div>
+            <div class="note note--pink note--4"><p>В нашей студии можно провести любые съёмки — личные, друзей-компаний, парные — достаточно записаться и собрать образ.</p></div>
+        </div>
+        <div class="about__photos-col">
+            <div class="about__photo about__photo--top"><div class="placeholder">Фото</div></div>
+            <div class="about__photo-row">
+                <div class="about__photo about__photo--bottom"><div class="placeholder">Фото</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PHOTO CAROUSEL -->
+<section class="carousel">
+    <div class="carousel__track">
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+    </div>
+    <button class="carousel__arrow" aria-label="Листать">›</button>
+</section>
+
+<!-- HOURS -->
+<section class="hours">
+    <div class="hours__card">
+        <p>ЧАСЫ РАБОТЫ СТУДИИ — ЕЖЕДНЕВНО, С 10 ДО 19.</p>
+    </div>
+</section>
+
+<!-- MAP + ADDRESS -->
+<section class="location">
+    <div class="location__map"><div class="placeholder" style="height:300px">Карта</div></div>
+    <div class="location__info">
+        <p class="location__label">НАШ АДРЕС:</p>
+        <p class="location__address">Город Н. Велесский район, улица Валеримова, строение 30/7, главный вход, 1 этаж, офис № 1(01)</p>
+    </div>
+</section>
+
+<!-- CONTACT FORM -->
+<section class="contact">
+    <div class="contact__left">
+        <p class="contact__logo">SELF</p>
+        <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
+        <a href="#" class="contact__link">ДОГОВОР ОФЕРТЫ</a>
+    </div>
+    <div class="contact__right">
+        <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
+        <label class="contact__label">АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</label>
+        <input type="email" class="contact__input" placeholder="info@example.com">
+        <label class="contact__label">ВВЕДИТЕ ВАШ ВОПРОС</label>
+        <textarea class="contact__textarea" placeholder="Введите ваш вопрос"></textarea>
+        <button class="contact__btn">ОТПРАВИТЬ</button>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="footer__top">
+        <span>Study project</span>
+        <span>Icons by Icons8</span>
+        <span>Not for commercial use!</span>
+    </div>
+    <div class="footer__socials">
+        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
+        item.addEventListener('click', function() {
+            var menu = this.closest('.nav__dropdown-menu');
+            if (menu) menu.style.display = 'none';
+            setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
+        });
+    });
+</script>
+
+</body></html>
