@@ -166,56 +166,46 @@
 
 
 <!-- ============================================================
-     БЛОК 5: ФОТОСЕТКА ВЕРХНЯЯ (4 колонки × 3 ряда = 12 фото)
-     
-     ВСТАВИТЬ ФОТО: замени каждый <div class="placeholder">
-     на <img src="фото.jpg" alt="" style="width:100%;height:100%;object-fit:cover">
+     БЛОК 5: ФОТО-КАРУСЕЛЬ (4 фото, без зазоров, до краёв)
      ============================================================ -->
-<section class="pgrid pgrid--top">
-    <div class="pg"><div class="placeholder">1</div></div>
-    <div class="pg"><div class="placeholder">2</div></div>
-    <div class="pg"><div class="placeholder">3</div></div>
-    <div class="pg"><div class="placeholder">4</div></div>
-    <div class="pg"><div class="placeholder">5</div></div>
-    <div class="pg"><div class="placeholder">6</div></div>
-    <div class="pg"><div class="placeholder">7</div></div>
-    <div class="pg"><div class="placeholder">8</div></div>
-    <div class="pg"><div class="placeholder">9</div></div>
-    <div class="pg"><div class="placeholder">10</div></div>
-    <div class="pg"><div class="placeholder">11</div></div>
-    <div class="pg"><div class="placeholder">12</div></div>
+<section class="carousel carousel--main">
+    <button class="carousel__arrow carousel__arrow--left" aria-label="Назад">‹</button>
+    <div class="carousel__track">
+        <div class="carousel__item"><img src="carousel1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel3.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="carousel4.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    </div>
+    <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
 
 
 <!-- ============================================================
-     БЛОК 6: ИНФОРМАЦИЯ О ФОНАХ (BACKDROP)
-     Белый фон, жёлтая карточка с текстом, сноска
+     БЛОК 6: ВОЛНА + ТЕКСТ О ФОНАХ
+     Розовая волна (1440×337) с текстом поверх
      ============================================================ -->
-<section class="backdrop-white">
-    <!-- Жёлтая карточка с основным текстом -->
-    <div class="backdrop__card">
-        <p class="backdrop__text">ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН ИЗ ДОСТУПНЫХ ЦВЕТОВ.*<br>АКТУЛЬНЫЕ ЦВЕТА ФОНОВ НА ДАННЫЙ МОМЕНТ — БЕЛЫЙ, РУБИНОВЫЙ, РОЗОВЫЙ, ИНДИГО, ЧЁРНЫЙ.</p>
+<section class="backdrop-section">
+    <!-- Розовая волна (картинка 1440×337) -->
+    <div class="backdrop__wave">
+        <img src="wave-pink.jpg" alt="" style="width:100%;height:100%;display:block;">
     </div>
-    <!-- Сноска мелким текстом -->
-    <p class="backdrop__note">*В тарифах съёмки на 25 и 40 минут можно выбрать два цвета фона, в тарифе на 90 минут — три цвета.</p>
+    <!-- Бежевая карточка с текстом поверх волны -->
+    <div class="backdrop__content">
+        <div class="backdrop__card">
+            <p class="backdrop__text">ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН ИЗ ДОСТУПНЫХ ЦВЕТОВ.* АКТУАЛЬНЫЕ ЦВЕТА ФОНОВ НА ДАННЫЙ МОМЕНТ — БЕЛЫЙ, РУБИНОВЫЙ, РОЗОВЫЙ, ИНДИГО, ЧЁРНЫЙ.</p>
+        </div>
+        <p class="backdrop__note">*В тарифах съёмки на 25 и 40 минут можно выбрать два цвета фона, в тарифе на 90 минут — три цвета.</p>
+    </div>
 </section>
 
 
 <!-- ============================================================
      БЛОК 7: ЦИТАТА (QUOTE)
-     Розовая волна переходит в розовый фон с белым текстом
+     Оранжевый фон до краёв, жёлтая карточка с текстом по центру
      ============================================================ -->
 <section class="quote-section">
-    <!-- Волна — переход от белого (backdrop) к розовому -->
-    <!-- Цвет волны fill="#FA99C0" — должен совпадать с фоном .quote__body -->
-    <div class="quote__wave">
-        <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
-            <path d="M0,100 L0,60 Q200,0 450,50 Q700,100 950,40 Q1150,0 1350,50 L1440,30 L1440,100 Z" fill="#FA99C0"/>
-        </svg>
-    </div>
-    <!-- Текст цитаты — белый на розовом -->
-    <div class="quote__body">
-        <p class="quote__text">SELF — ЭТО ИДЕАЛЬНОЕ МЕСТО ДЛЯ ТОГО, ЧТОБЫ ПРОВЕСТИ ВРЕМЯ НАЕДИНЕ С СОБОЙ ИЛИ БЛИЗКИМИ И ЗАПЕЧАТЛЕТЬ СВОИ САМЫЕ ИСКРЕННИЕ ЭМОЦИИ.</p>
+    <div class="quote__card">
+        <p class="quote__text">SELF — это идеальное место для того, чтобы провести время наедине с собой или близкими и запечатлеть свои самые искренние эмоции.</p>
     </div>
 </section>
 
@@ -224,22 +214,18 @@
      БЛОК 8: ФОТОСЕТКА НИЖНЯЯ (4 колонки × 4 ряда = 16 фото)
      ============================================================ -->
 <section class="pgrid pgrid--btm">
-    <div class="pg"><div class="placeholder">1</div></div>
-    <div class="pg"><div class="placeholder">2</div></div>
-    <div class="pg"><div class="placeholder">3</div></div>
-    <div class="pg"><div class="placeholder">4</div></div>
-    <div class="pg"><div class="placeholder">5</div></div>
-    <div class="pg"><div class="placeholder">6</div></div>
-    <div class="pg"><div class="placeholder">7</div></div>
-    <div class="pg"><div class="placeholder">8</div></div>
-    <div class="pg"><div class="placeholder">9</div></div>
-    <div class="pg"><div class="placeholder">10</div></div>
-    <div class="pg"><div class="placeholder">11</div></div>
-    <div class="pg"><div class="placeholder">12</div></div>
-    <div class="pg"><div class="placeholder">13</div></div>
-    <div class="pg"><div class="placeholder">14</div></div>
-    <div class="pg"><div class="placeholder">15</div></div>
-    <div class="pg"><div class="placeholder">16</div></div>
+    <div class="pg"><img src="grid1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid3.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid4.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid5.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid6.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid7.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid8.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid9.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid10.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid11.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="pg"><img src="grid12.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
 </section>
 
 
@@ -263,12 +249,34 @@
 
 
 <script>
+    // Dropdown menu
     document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
         item.addEventListener('click', function() {
             var menu = this.closest('.nav__dropdown-menu');
             if (menu) menu.style.display = 'none';
             setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
         });
+    });
+
+    // Carousel — стрелки прокрутки
+    document.querySelectorAll('.carousel').forEach(function(carousel) {
+        var track = carousel.querySelector('.carousel__track');
+        var leftBtn = carousel.querySelector('.carousel__arrow--left');
+        var rightBtn = carousel.querySelector('.carousel__arrow--right');
+        if (!track) return;
+
+        var scrollAmount = track.offsetWidth;
+
+        if (rightBtn) {
+            rightBtn.addEventListener('click', function() {
+                track.scrollBy({ left: scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
+        if (leftBtn) {
+            leftBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
     });
 </script>
 

@@ -755,14 +755,53 @@ a {
    ================================================================ */
 
 /* Контейнер сетки */
+/* ================================================================
+   БЛОК 7: ЦИТАТА (QUOTE)
+   Оранжевый фон на всю ширину, жёлтая карточка с текстом по центру
+   ================================================================ */
+
+.quote-section {
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 0;
+}
+
+/* Жёлтая карточка — 1064×238, radius 10, #FFD96C */
+.quote__card {
+    background: var(--yellow);
+    border-radius: 10px;
+    width: 1064px;
+    max-width: calc(100% - 80px);
+    padding: 35px 92px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Текст — Inter SemiBold 35px, uppercase, center, #DB6338, line-height 120% */
+.quote__text {
+    font-family: var(--f-sans);
+    font-size: 35px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #DB6338;
+    line-height: 120%;
+    letter-spacing: 0;
+    text-align: center;
+}
+
+
 .pgrid {
     display: grid;                          /* CSS Grid */
-    grid-template-columns: repeat(4, 1fr);  /* 4 равных колонки */
+    grid-template-columns: repeat(3, 1fr);  /* 3 равных колонки */
 }
 
 /* Одна ячейка фото */
 .pg {
-    height: 260px;                  /* Высота ячейки — 260px */
+    height: 540px;                  /* Высота ячейки — 540px */
     overflow: hidden;               /* Обрезать фото по краям */
 }
 
@@ -773,86 +812,87 @@ a {
 
 
 /* ================================================================
-   БЛОК 6: ИНФОРМАЦИЯ О ФОНАХ (BACKDROP)
-   Белый блок с жёлтой карточкой "ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН..."
+   БЛОК 6: ВОЛНА + ТЕКСТ О ФОНАХ
+   Розовая волна 1440×337, текст поверх
    ================================================================ */
 
-/* Контейнер — белый фон */
-.backdrop-white {
-    background: var(--white);       /* Белый фон */
-    padding: 40px 60px;
-    text-align: center;
-}
-
-/* Жёлтая карточка с текстом */
-.backdrop__card {
-    background: var(--yellow);      /* Жёлтый фон #FFD96C */
-    border-radius: 18px;            /* Закруглённые углы */
-    padding: 24px 48px;             /* Внутренние отступы */
-    display: inline-block;          /* Ширина по содержимому */
-    max-width: 860px;
-    margin: 0 auto 20px;
-}
-
-/* Текст внутри жёлтой карточки */
-.backdrop__text {
-    font-family: var(--f-sans);     /* Inter */
-    font-size: 16px;
-    font-weight: 700;               /* Жирный */
-    text-transform: uppercase;
-    color: var(--orange);           /* Оранжевый цвет текста */
-    line-height: 160%;
-}
-
-/* Сноска со звёздочкой */
-.backdrop__note {
-    font-family: var(--f-serif);    /* Libre Baskerville */
-    font-size: 14px;
-    color: var(--black);
-}
-
-
-/* ================================================================
-   БЛОК 7: ЦИТАТА (QUOTE)
-   Розовая секция с белым текстом и волной сверху
-   "SELF — ЭТО ИДЕАЛЬНОЕ МЕСТО..."
-   ================================================================ */
-
-/* Контейнер секции */
-.quote-section {
+.backdrop-section {
     position: relative;
+    background: var(--orange);
     overflow: hidden;
 }
 
-/* Волна сверху — переход от белого к розовому */
-.quote__wave {
-    height: 100px;                  /* Высота волны */
-    background: var(--white);       /* Фон ЗА волной — белый (от предыдущей секции) */
+/* Волна — фон секции */
+.backdrop__wave {
+    width: 100%;
+    height: 337px;
 }
 
-.quote__wave svg {
+.backdrop__wave svg {
     width: 100%;
     height: 100%;
     display: block;
 }
 
-/* Розовый блок с текстом */
-.quote__body {
-    background: var(--pink);        /* Розовый фон #FA99C0 */
-    padding: 40px 60px 60px;
+/* Текст поверх волны — поднят выше чтобы был на розовом */
+.backdrop__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    z-index: 2;
+    padding: 30px 100px 20px;
+    box-sizing: border-box;
+}
+
+/* Бежевая карточка (1240×82, radius 10, #FFF5D9) */
+.backdrop__card {
+    background: #FFF5D9;
+    border-radius: 10px;
+    padding: 16px 48px;
+    width: 1240px;
+    max-width: 100%;
+    margin: 0 auto 16px;
+    box-sizing: border-box;
+}
+
+/* Текст — Inter SemiBold 20px, #DB6338, uppercase, center */
+.backdrop__text {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #DB6338;
+    line-height: 130%;
     text-align: center;
 }
 
-/* Текст цитаты — БЕЛЫЙ */
-.quote__text {
-    font-family: var(--f-sans);     /* Inter */
-    font-size: 22px;
-    font-weight: 700;               /* Жирный */
-    text-transform: uppercase;
-    color: var(--white);            /* ← БЕЛЫЙ цвет текста на розовом фоне */
-    line-height: 160%;
-    max-width: 700px;               /* Максимальная ширина текста */
-    margin: 0 auto;                 /* Центрирование */
+/* Сноска — Inter 20px, #FFF5D9 */
+.backdrop__note {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 400;
+    color: #FFF5D9;
+    line-height: 120%;
+    text-align: center;
+}
+
+/* Карусель на главной — как на сертификатах, без зазоров */
+.carousel--main .carousel__item {
+    height: 626px;
+    flex: 0 0 25%;
+    overflow: hidden;
+    border-radius: 0;
+}
+
+.carousel--main .carousel__track {
+    gap: 0;
+    padding: 0;
 }
 
 
@@ -1055,17 +1095,16 @@ a {
     scroll-snap-align: start;       /* Прилипание к началу */
 }
 
-/* Кнопка-стрелка ">" справа */
+/* Кнопки-стрелки карусели */
 .carousel__arrow {
     position: absolute;
-    right: 20px;                    /* Отступ от правого края */
     top: 50%;
-    transform: translateY(-50%);    /* Центрирование по вертикали */
+    transform: translateY(-50%);
     width: 50px;
     height: 50px;
-    border-radius: 50%;             /* Круглая кнопка */
+    border-radius: 50%;
     border: none;
-    background: var(--white);       /* Белый фон */
+    background: var(--white);
     color: var(--black);
     font-size: 28px;
     cursor: pointer;
@@ -1074,6 +1113,14 @@ a {
     align-items: center;
     justify-content: center;
     z-index: 10;
+}
+
+.carousel__arrow--right {
+    right: 20px;
+}
+
+.carousel__arrow--left {
+    left: 20px;
 }
 
 .carousel__arrow:hover {
