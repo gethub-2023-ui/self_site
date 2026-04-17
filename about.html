@@ -27,50 +27,64 @@
     </nav>
 </header>
 
-<!-- HERO BANNER -->
+<!-- HERO BANNER — фото на фон, текст в бежевой карточке поверх -->
 <section class="about-hero">
-    <div class="about-hero__photo"><div class="placeholder" style="height:500px">Фото студии</div></div>
-</section>
-
-<!-- WELCOME CARD -->
-<section class="welcome">
-    <div class="welcome__card">
-        <p>ДОБРО ПОЖАЛОВАТЬ В ФОТОСТУДИЮ SELF! НАШИ ДВЕРИ ОТКРЫТЫ ДЛЯ ВСЕХ — ДЛЯ ТЕХ, КТО ЛЮБИТ ФОТОГРАФИРОВАТЬСЯ, И ДЛЯ ТЕХ, КТО НЕ ОЧЕНЬ. В НАШЕЙ СТУДИИ НЕТ ФОТОГРАФА, И ВСЕ КАДРЫ ВЫ СОЗДАЁТЕ САМИ, НАЕДИНЕ С СОБОЙ.</p>
+    <img src="about-hero-bg.jpg" alt="" class="about-hero__bg">
+    <div class="about-hero__overlay">
+        <div class="about-hero__card">
+            <h1 class="about-hero__title">О СТУДИИ</h1>
+            <p class="about-hero__desc">Добро пожаловать в фотостудию SELF! Наши двери открыты для всех – для тех, кто любит фотографироваться, и для тех, кто не очень. В нашей студии нет фотографа, и все кадры вы создаёте сами, наедине с собой.</p>
+        </div>
     </div>
 </section>
 
-<!-- ABOUT NOTES + PHOTOS -->
-<section class="about-story">
+<!-- ABOUT NOTES + PHOTOS (как на главной, без пузыря) -->
+<section class="about">
     <div class="blob blob--green"></div>
+    <div class="blob blob--yellow"></div>
     <div class="blob blob--arch"></div>
-    <div class="about-story__inner">
+
+    <div class="about__inner">
         <div class="about__notes-area">
-            <div class="note note--orange note--1"><p>Арина — основательница фотостудии. Когда-то давно она загорелась идеей создать фотостудию для всех и каждого.</p></div>
-            <div class="note note--pink note--2"><p>Вдохновившая идеей, она создала эту студию, где нет стереотипов и рамок, здесь каждый может выразить свою индивидуальность.</p></div>
-            <div class="note note--orange note--3"><p>Мы верим, что фотография — это не только способ запечатлеть момент, но и возможность рассказать свою историю.</p></div>
-            <div class="note note--pink note--4"><p>В нашей студии можно провести любые съёмки — личные, друзей-компаний, парные — достаточно записаться и собрать образ.</p></div>
+            <div class="note note--orange note--1">
+                <p>Арина — основательница фотостудии. Когда-то давно она загорелась задумкой создать фотостудию для всех и каждого.</p>
+            </div>
+            <div class="note note--pink note--2">
+                <p>Вдохновлённая идеей, она создала эту студию, где нет стереотипов и рамок, здесь каждый может выразить свою индивидуальность.</p>
+            </div>
+            <div class="note note--orange note--3">
+                <p>Мы верим, что фотография — это не только способ запечатлеть момент, но и возможность рассказать свою историю.</p>
+            </div>
+            <div class="note note--pink note--4">
+                <p>В нашей студии вы можете провести любую съёмку — личную, фэшн, дружескую, парную — достаточно записаться и собрать образ!</p>
+            </div>
         </div>
+
         <div class="about__photos-col">
-            <div class="about__photo about__photo--top"><div class="placeholder">Фото</div></div>
-            <div class="about__photo-row">
-                <div class="about__photo about__photo--bottom"><div class="placeholder">Фото</div></div>
+            <div class="about__photo about__photo--top">
+                <img src="about-photo1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
+            </div>
+            <div class="about__photo about__photo--bottom">
+                <img src="about-photo2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
             </div>
         </div>
     </div>
 </section>
 
-<!-- PHOTO CAROUSEL -->
-<section class="carousel">
+<!-- КАРУСЕЛЬ (как на сертификатах) -->
+<section class="carousel carousel--cert">
+    <button class="carousel__arrow carousel__arrow--left" aria-label="Назад">‹</button>
     <div class="carousel__track">
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><img src="about-carousel1.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="about-carousel2.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="about-carousel3.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="about-carousel4.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
-    <button class="carousel__arrow" aria-label="Листать">›</button>
+    <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
+
+<!-- Лавандовая полоска -->
+<div class="about__stripe-bottom"></div>
 
 <!-- HOURS -->
 <section class="hours">
@@ -81,27 +95,27 @@
 
 <!-- MAP + ADDRESS -->
 <section class="location">
-    <div class="location__map"><div class="placeholder" style="height:300px">Карта</div></div>
-    <div class="location__info">
+    <img src="map-bg.png" alt="Карта" class="location__bg">
+    <div class="location__card">
         <p class="location__label">НАШ АДРЕС:</p>
-        <p class="location__address">Город Н. Велесский район, улица Валеримова, строение 30/7, главный вход, 1 этаж, офис № 1(01)</p>
+        <p class="location__address">Город Н, Велесский район, улица Вассермана, строение 30/2, главный вход, 2 этаж, офис № 1000</p>
     </div>
 </section>
 
 <!-- CONTACT FORM -->
 <section class="contact">
-    <div class="contact__left">
-        <p class="contact__logo">SELF</p>
-        <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
-        <a href="#" class="contact__link">ДОГОВОР ОФЕРТЫ</a>
-    </div>
-    <div class="contact__right">
-        <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
-        <label class="contact__label">АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ</label>
-        <input type="email" class="contact__input" placeholder="info@example.com">
-        <label class="contact__label">ВВЕДИТЕ ВАШ ВОПРОС</label>
-        <textarea class="contact__textarea" placeholder="Введите ваш вопрос"></textarea>
-        <button class="contact__btn">ОТПРАВИТЬ</button>
+    <div class="contact__card">
+        <div class="contact__left">
+            <img src="logo-self.svg" alt="SELF" class="contact__logo-img">
+            <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
+            <a href="#"><img src="btn-offer.png" alt="ДОГОВОР ОФЕРТЫ" style="max-width:100%;height:auto;display:block;cursor:pointer"></a>
+        </div>
+        <div class="contact__right">
+            <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
+            <img src="input-email.png" alt="email" style="max-width:100%;height:auto;display:block;margin-bottom:8px">
+            <img src="input-comment.png" alt="comment" style="max-width:100%;height:auto;display:block">
+            <img src="btn-submit.png" alt="ОТПРАВИТЬ" style="height:75px;width:auto;display:block;margin-top:20px;cursor:pointer">
+        </div>
     </div>
 </section>
 
@@ -127,6 +141,25 @@
             if (menu) menu.style.display = 'none';
             setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
         });
+    });
+
+    // Carousel — стрелки прокрутки
+    document.querySelectorAll('.carousel').forEach(function(carousel) {
+        var track = carousel.querySelector('.carousel__track');
+        var leftBtn = carousel.querySelector('.carousel__arrow--left');
+        var rightBtn = carousel.querySelector('.carousel__arrow--right');
+        if (!track) return;
+        var scrollAmount = track.offsetWidth;
+        if (rightBtn) {
+            rightBtn.addEventListener('click', function() {
+                track.scrollBy({ left: scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
+        if (leftBtn) {
+            leftBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
     });
 </script>
 

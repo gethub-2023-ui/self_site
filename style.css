@@ -968,8 +968,65 @@ a {
    Большое фото на оранжевом фоне
    ================================================================ */
 .about-hero {
-    background: var(--orange);
+    position: relative;
+    height: 770px;
     padding: 0;
+    overflow: hidden;
+}
+
+.about-hero__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-hero__overlay {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 40px;
+}
+
+/* Бежевая карточка — 1004×232, radius 10, #FFF5D9 */
+.about-hero__card {
+    background: #FFF5D9;
+    border-radius: 10px;
+    width: 1004px;
+    height: 232px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 48px;
+    box-sizing: border-box;
+}
+
+/* Заголовок — Inter SemiBold 80px, uppercase, center, #DB6338 */
+.about-hero__title {
+    font-family: var(--f-sans);
+    font-size: 80px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #DB6338;
+    line-height: 130%;
+    margin-bottom: 10px;
+}
+
+/* Описание — Inter SemiBold 20px, uppercase, center, #DB6338, line-height 130% */
+.about-hero__desc {
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #DB6338;
+    line-height: 130%;
 }
 
 .about-hero__photo {
@@ -1144,25 +1201,30 @@ a {
    Жёлтая pill-карточка "ЧАСЫ РАБОТЫ СТУДИИ — ЕЖЕДНЕВНО, С 10 ДО 19."
    ================================================================ */
 .hours {
-    background: var(--beige);
+    background: var(--orange);
     padding: 40px 60px;
     text-align: center;
 }
 
 .hours__card {
-    background: var(--yellow);      /* Жёлтый фон */
-    border-radius: 40px;            /* Сильное закругление — pill-форма */
-    padding: 20px 48px;
-    display: inline-block;
+    background: #FFF5D9;
+    border-radius: 10px;
+    width: 816px;
+    height: 82px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 48px;
+    box-sizing: border-box;
 }
 
 .hours__card p {
     font-family: var(--f-sans);
-    font-size: 20px;
-    font-weight: 700;
+    font-size: 27px;
+    font-weight: 600;
     text-transform: uppercase;
-    color: var(--black);
-    line-height: 150%;
+    color: #DB6338;
+    line-height: 120%;
 }
 
 
@@ -1171,40 +1233,53 @@ a {
    Оранжевый блок: карта слева, адрес справа
    ================================================================ */
 .location {
-    background: var(--orange);
-    padding: 40px 60px;
-    display: flex;                  /* Карта и адрес в ряд */
-    gap: 40px;
-    align-items: flex-start;
-}
-
-/* Карта (левая часть) */
-.location__map {
-    flex: 1;                        /* Занимает половину */
-    border-radius: 14px;
+    position: relative;
+    height: 489px;
     overflow: hidden;
 }
 
-/* Блок с адресом (правая часть) */
-.location__info {
-    flex: 1;
+/* Фон — картинка карты */
+.location__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Жёлтая карточка с адресом — 355×226, radius 10, #FFD96C */
+.location__card {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 135px;
+    width: 355px;
+    height: 226px;
+    background: #FFD96C;
+    border-radius: 10px;
+    padding: 24px 28px;
+    box-sizing: border-box;
+    z-index: 2;
 }
 
 /* Заголовок "НАШ АДРЕС:" */
 .location__label {
     font-family: var(--f-sans);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
-    color: var(--white);
+    color: #DB6338;
     margin-bottom: 12px;
+    text-transform: uppercase;
 }
 
-/* Текст адреса */
+/* Текст адреса — Libre Baskerville Bold 20px */
 .location__address {
     font-family: var(--f-serif);
-    font-size: 16px;
-    color: var(--white);
-    line-height: 160%;
+    font-size: 20px;
+    font-weight: 700;
+    color: #DB6338;
+    line-height: 120%;
 }
 
 
@@ -1213,56 +1288,87 @@ a {
    Бежевый блок: логотип SELF слева, форма с полями справа
    ================================================================ */
 .contact {
-    background: var(--beige);
+    background: var(--orange);
     padding: 60px;
-    display: flex;                  /* Лого слева, форма справа */
-    gap: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact__card {
+    background: #FFF5D9;
+    border-radius: 20px;
+    width: 1170px;
+    display: flex;
+    gap: 40px;
+    padding: 50px 60px;
+    box-sizing: border-box;
     align-items: flex-start;
 }
 
 /* Левая колонка — логотип + "Договор оферты" */
 .contact__left {
-    flex: 0 0 300px;               /* Фиксированная ширина 300px */
+    flex: 0 0 340px;
 }
 
-/* Текст "SELF" крупно */
-.contact__logo {
-    font-family: var(--f-sans);
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--btn-to);           /* Розово-фиолетовый */
-    letter-spacing: 4px;
+/* Логотип SVG */
+.contact__logo-img {
+    width: 321px;
+    height: 119px;
+    display: block;
     margin-bottom: 8px;
 }
 
 /* Подпись "ФОТОСТУДИЯ АВТОПОРТРЕТА" */
 .contact__sub {
-    font-family: var(--f-sans);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--orange);
+    font-family: var(--f-serif);
+    font-size: 20px;
+    font-weight: 700;
+    color: #FF70AB;
     margin-bottom: 24px;
+    text-align: center;
+    white-space: nowrap;
 }
 
 /* Кнопка "ДОГОВОР ОФЕРТЫ" */
 .contact__link {
     display: inline-block;
-    border: 2px solid var(--orange);    /* Оранжевая рамка */
-    border-radius: 30px;                /* Овальная форма */
-    padding: 10px 24px;
-    font-family: var(--f-sans);
-    font-size: 14px;
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--orange);
-    transition: background 0.2s;
+    text-decoration: none;
+    border: none;
 }
 
-/* При наведении — заливается оранжевым */
-.contact__link:hover {
-    background: var(--orange);
-    color: var(--white);
+.contact__link-img {
+    display: block;
+}
+
+/* При наведении */
+.contact__link:hover .contact__link-img {
+    opacity: 1 !important;
+}
+
+/* Картинки полей ввода */
+.contact__img-input {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 4px;
+}
+
+.contact__img-textarea {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Кнопка отправить — картинка */
+.contact__img-btn {
+    margin-top: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.contact__img-btn:hover {
+    transform: translateY(-3px);
 }
 
 /* Правая колонка — форма */
@@ -1272,29 +1378,31 @@ a {
 
 /* Вступительный текст */
 .contact__intro {
-    font-family: var(--f-serif);
-    font-size: 15px;
-    line-height: 160%;
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #000;
     margin-bottom: 24px;
 }
 
-/* Подписи полей "АДРЕС ЭЛЕКТРОННОЙ ПОЧТЫ", "ВВЕДИТЕ ВАШ ВОПРОС" */
+/* Подписи полей */
 .contact__label {
     display: block;
     font-family: var(--f-sans);
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
-    color: var(--orange);           /* Оранжевый цвет подписи */
+    color: var(--orange);
     margin-bottom: 6px;
     margin-top: 16px;
 }
 
-/* Поля ввода (email и текстовое поле) */
+/* Поля ввода */
 .contact__input,
 .contact__textarea {
     width: 100%;
-    border: 2px solid var(--orange);    /* Оранжевая рамка */
+    border: 2px solid var(--orange);
     border-radius: 12px;
     padding: 12px 16px;
     font-family: var(--f-serif);
@@ -1302,18 +1410,17 @@ a {
     background: var(--white);
     outline: none;
     transition: border-color 0.2s;
+    box-sizing: border-box;
 }
 
-/* Поле при фокусе — рамка меняет цвет на розовый */
 .contact__input:focus,
 .contact__textarea:focus {
-    border-color: var(--btn-to);        /* Розово-фиолетовая рамка */
+    border-color: var(--btn-to);
 }
 
-/* Текстовое поле — выше чем email */
 .contact__textarea {
     height: 100px;
-    resize: vertical;               /* Можно менять высоту мышкой */
+    resize: vertical;
 }
 
 /* Кнопка "ОТПРАВИТЬ" */
@@ -1321,14 +1428,13 @@ a {
     display: inline-block;
     margin-top: 20px;
     background: linear-gradient(135deg, var(--btn-from) 20%, var(--btn-to) 91%);
-        /* Градиент как у кнопки "Записаться" */
     color: var(--white);
     font-family: var(--f-sans);
     font-weight: 600;
     font-size: 20px;
     text-transform: uppercase;
     padding: 16px 48px;
-    border-radius: 40px;            /* Pill-форма */
+    border-radius: 40px;
     border: none;
     cursor: pointer;
     box-shadow: 0 6px 24px rgba(229, 62, 132, 0.35);
