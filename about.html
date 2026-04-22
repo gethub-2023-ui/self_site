@@ -28,8 +28,8 @@
 </header>
 
 <!-- HERO BANNER — фото на фон, текст в бежевой карточке поверх -->
-<section class="about-hero">
-    <img src="about-hero-bg.jpg" alt="" class="about-hero__bg">
+<section class="about-hero about-hero--beige about-hero--compact">
+    <img src="room-big-hero-bg.jpg" alt="" class="about-hero__bg">
     <div class="about-hero__overlay">
         <div class="about-hero__card">
             <h1 class="about-hero__title">О СТУДИИ</h1>
@@ -39,7 +39,7 @@
 </section>
 
 <!-- ABOUT NOTES + PHOTOS (как на главной, без пузыря) -->
-<section class="about">
+<section class="about about--lift">
     <div class="blob blob--green"></div>
     <div class="blob blob--yellow"></div>
     <div class="blob blob--arch"></div>
@@ -83,8 +83,7 @@
     <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
 
-<!-- Лавандовая полоска -->
-<div class="about__stripe-bottom"></div>
+<!-- Лавандовая полоска убрана -->
 
 <!-- HOURS -->
 <section class="hours">
@@ -112,9 +111,11 @@
         </div>
         <div class="contact__right">
             <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
-            <img src="input-email.png" alt="email" style="max-width:100%;height:auto;display:block;margin-bottom:8px">
-            <img src="input-comment.png" alt="comment" style="max-width:100%;height:auto;display:block">
-            <img src="btn-submit.png" alt="ОТПРАВИТЬ" style="height:75px;width:auto;display:block;margin-top:20px;cursor:pointer">
+            <img src="input-email.png" alt="email" class="contact__img-input">
+            <img src="input-comment.png" alt="comment" class="contact__img-input">
+            <div class="contact__btn-wrap">
+                <img src="btn-submit.png" alt="ОТПРАВИТЬ" style="height:75px;width:auto;display:block;cursor:pointer">
+            </div>
         </div>
     </div>
 </section>

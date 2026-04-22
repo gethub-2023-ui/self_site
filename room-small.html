@@ -27,22 +27,19 @@
     </nav>
 </header>
 
-<!-- HERO -->
-<section class="hero rooms-hero">
-    <div class="hero__wave">
-        <svg viewBox="0 0 1440 200" preserveAspectRatio="none">
-            <path d="M0,0 L0,130 Q200,200 450,130 Q700,60 950,130 Q1150,185 1350,110 L1440,80 L1440,0 Z" fill="#FA99C0"/>
-        </svg>
-    </div>
-    <div class="rooms-hero__inner">
-        <h1 class="rooms-hero__title">МАЛЫЙ ЗАЛ</h1>
-        <p class="rooms-hero__desc">В НАШЕЙ СТУДИИ ДОСТУПНА АРЕНДА ЗАЛОВ ДЛЯ ВАШИХ ПРАЗДНИКОВ, МЕРОПРИЯТИЙ, МАСТЕР-КЛАССОВ, ЛЕКЦИЙ ИЛИ КОНТЕНТ-СЪЁМОК.</p>
+<!-- HERO BANNER — фото на фон, текст в бежевой карточке поверх (как на about.html) -->
+<section class="about-hero about-hero--beige about-hero--compact">
+    <img src="room-big-hero-bg.jpg" alt="" class="about-hero__bg">
+    <div class="about-hero__overlay">
+        <div class="about-hero__card">
+            <h1 class="about-hero__title">МАЛЫЙ ЗАЛ</h1>
+            <p class="about-hero__desc">В НАШЕЙ СТУДИИ ДОСТУПНА АРЕНДА ЗАЛОВ ДЛЯ ВАШИХ ПРАЗДНИКОВ, МЕРОПРИЯТИЙ, МАСТЕР-КЛАССОВ, ЛЕКЦИЙ ИЛИ КОНТЕНТ-СЪЁМОК.</p>
+        </div>
     </div>
 </section>
 
-<!-- СТИКЕРЫ + ФОТО -->
-<section class="about">
-    <div class="about__stripe-top"></div>
+<!-- СТИКЕРЫ + ФОТО (как на "О студии", с добавлением пузыря как на главной) -->
+<section class="about about--lift">
     <div class="blob blob--green"></div>
     <div class="blob blob--yellow"></div>
     <div class="blob blob--arch"></div>
@@ -50,55 +47,64 @@
     <div class="about__inner">
         <div class="about__notes-area">
             <div class="note note--orange note--1">
-                <p>Доступное время для аренды — с 10:00 до 23:00. В удобное время можно выбрать подходящую для вас дату и срок.</p>
+                <p>Доступное время для аренды с 10:00 до 23:00. В пределах этого времени можно выбрать подходящий для вас слот.</p>
             </div>
             <div class="note note--pink note--2">
-                <p>Для аренды зала достаточно связаться с администратором или заполнить форму на этой странице — мы обязательно свяжемся с вами.</p>
+                <p>Для аренды зала формируется договор, куда вносятся все тарифы и услуги, которыми вы хотите воспользоваться. Один из экземпляров будет у вас.</p>
             </div>
             <div class="note note--orange note--3">
-                <p>Также аренду зала можно совместить со съёмкой в фотокомнате. Стоимость аренды фотокомнаты — 50–60 мин (40 минут в зависимости от тарифа).</p>
+                <p>Также аренду зала можно совместить со съёмкой в фотокомнате - можно оплатить слот на 25, 40 или 90 минут и использовать его в любой момент.</p>
             </div>
             <div class="note note--pink note--4">
-                <p>В зале есть мебель, стулья, столы, посуда, которую можно арендовать по прайсу. Вы также можете принести свои декор, еду и напитки.</p>
+                <p>В зале есть колонка, зеркало, стол, стулья, много поверхностей, куда можно положить или поставить ваши вещи. Вы можете принести свою посуду, еду и напитки.</p>
             </div>
         </div>
 
+        <!-- ФОТО — как на главной (с пузырём) -->
         <div class="about__photos-col">
+            <!-- pic 1: Верхнее фото малого зала -->
             <div class="about__photo about__photo--top">
-                <div class="placeholder">Фото малого зала</div>
+                <img src="room-small-photo1.jpg" alt="Фото малого зала" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
             </div>
-            <div class="about__photo-row">
-                <div class="about__photo about__photo--bottom">
-                    <div class="placeholder">Фото малого зала</div>
-                </div>
-                <div class="about__bubble">
-                    <span>Вид<br>на малый зал<br>изнутри.</span>
-                    <div class="about__bubble-tail"></div>
-                </div>
+
+            <!-- pic 2: Нижнее фото малого зала -->
+            <div class="about__photo about__photo--bottom">
+                <img src="room-small-photo2.jpg" alt="Фото малого зала" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
+            </div>
+
+            <!-- Пузырь с текстом (как на главной, но с другим текстом) -->
+            <div class="about__bubble">
+                <span>Вид на малый зал изнутри.</span>
+                <div class="about__bubble-tail"></div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ФОТО-КАРУСЕЛЬ -->
-<section class="carousel">
+<!-- ФОТО-КАРУСЕЛЬ (как на "О студии") -->
+<section class="carousel carousel--cert">
+    <button class="carousel__arrow carousel__arrow--left" aria-label="Назад">‹</button>
     <div class="carousel__track">
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
-        <div class="carousel__item"><div class="placeholder">Фото</div></div>
+        <div class="carousel__item"><img src="room-small-carousel1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="room-small-carousel2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="room-small-carousel3.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="room-small-carousel4.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
-    <button class="carousel__arrow" aria-label="Листать">›</button>
+    <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
 
-<!-- ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА -->
-<section class="tariffs">
-    <div class="tariffs__heading-wrap">
-        <h2 class="tariffs__heading">ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА</h2>
-    </div>
+<!-- Лавандовая полоска -->
+<div class="about__stripe-bottom"></div>
 
+<!-- ОРАНЖЕВЫЙ БЛОК С БЕЖЕВОЙ КАРТОЧКОЙ — "ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА" -->
+<section class="quote-section quote-section--tariff">
+    <div class="quote__card quote__card--beige">
+        <p class="quote__text quote__text--small">ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА</p>
+    </div>
+</section>
+
+<!-- ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА — бежевая секция с таблицами (без собственного заголовка, он уже в оранжевом блоке выше) -->
+<section class="tariffs">
     <div class="tariffs__table-wrap">
         <div class="tariffs__columns">
             <div class="tariffs__col">
@@ -114,12 +120,12 @@
                 <div class="tariffs__row"><span>3 часа</span><span class="tariffs__dots"></span><span>5000 руб.</span></div>
             </div>
         </div>
-        <p class="tariffs__note">Доплата за позднее время (20:00–23:00) <span class="tariffs__dots-inline"></span> 300 руб./ч.</p>
+        <p class="tariffs__note"><span>Доплата за позднее время (20:00–23:00)</span><span class="tariffs__dots tariffs__dots--note"></span><span>300 руб./ч.</span></p>
     </div>
 
     <!-- АРЕНДА ФОТОКОМНАТЫ СОВМЕСТНО С МАЛЫМ ЗАЛОМ -->
     <div class="tariffs__extra">
-        <h3 class="tariffs__extra-title">АРЕНДА ФОТОКОМНАТЫ  СОВМЕСТНО С АРЕНДОЙ МАЛОГО ЗАЛА*</h3>
+        <h3 class="tariffs__extra-title">АРЕНДА ФОТОКОМНАТЫ СОВМЕСТНО С АРЕНДОЙ МАЛОГО ЗАЛА*</h3>
         <div class="tariffs__table-wrap">
             <div class="tariffs__columns">
                 <div class="tariffs__col">
@@ -135,41 +141,43 @@
                     <div class="tariffs__row"><span>90 минут</span><span class="tariffs__dots"></span><span>5500 руб.</span></div>
                 </div>
             </div>
-            <p class="tariffs__note">Доплата за количество участников съёмки (если человек более, чем 5) <span class="tariffs__dots-inline"></span> 300 руб./чел.</p>
+            <p class="tariffs__note"><span>Доплата за количество участников съёмки (если человек более, чем 5)</span><span class="tariffs__dots tariffs__dots--note"></span><span>300 руб./чел.</span></p>
         </div>
     </div>
 
-    <p class="tariffs__footnote">*Время аренды зала и фотокомнаты суммируется. Пример: вы хотите приобрести большой зал на 2 часа в будние с 10:00 и затем провести фотосъёмку на 40 минут. Итоговая аренда составит: 2 часа 40 минут, с 10:00 до 12:40. В это время вы можете использовать как 40 минут в фотокомнате, так и любой другой формат.</p>
+    <p class="tariffs__footnote">*Время аренды зала и фотокомнаты суммируется. Пример: вы хотите арендовать большой зал на 2 часа в будний день в 10:00 и хотите арендовать фотокомнату на 40 минут. Итоговое время аренды составит: 2 часа 40 минут, с 10:00 до 12:40. В это время вы можете использовать свои 40 минут в фотокомнате в любой удобный момент.</p>
 
     <!-- АРЕНДА ПОСУДЫ -->
     <div class="tariffs__dishes">
-        <h3 class="tariffs__dishes-title">Вы также можете арендовать посуду по следующему расценкам:</h3>
+        <h3 class="tariffs__dishes-title">Вы также можете арендовать посуду по следующим расценкам:</h3>
         <div class="tariffs__dishes-list">
             <div class="tariffs__row"><span>Фужеры-креманки</span><span class="tariffs__dots"></span><span>100 руб./шт.</span></div>
-            <div class="tariffs__row"><span>Тарелка (d 30–35 см)</span><span class="tariffs__dots"></span><span>100 руб./шт.</span></div>
-            <div class="tariffs__row"><span>Тарелка (d 15 см)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Тарелка (d=30 см)</span><span class="tariffs__dots"></span><span>150 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Тарелка (d=15 см)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
             <div class="tariffs__row"><span>Стаканы</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
             <div class="tariffs__row"><span>Чайный набор (чашка+блюдце)</span><span class="tariffs__dots"></span><span>200 руб./шт.</span></div>
             <div class="tariffs__row"><span>Графин</span><span class="tariffs__dots"></span><span>200 руб./шт.</span></div>
-            <div class="tariffs__row"><span>Комплект столовых приборов (ложка десертная и столовая, вилка и нож)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
+            <div class="tariffs__row"><span>Комплект столовых приборов (ложки десертная и столовая, вилка и нож)</span><span class="tariffs__dots"></span><span>50 руб./шт.</span></div>
         </div>
     </div>
 </section>
 
-<!-- КОНТАКТ-ФОРМА -->
+<!-- КОНТАКТ-ФОРМА (как на "О студии") -->
 <section class="contact">
-    <div class="contact__left">
-        <p class="contact__logo">SELF</p>
-        <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
-        <a href="#" class="contact__link">ДОГОВОР ОБ АРЕНДЕ ЗАЛА</a>
-    </div>
-    <div class="contact__right">
-        <p class="contact__intro">Если вы хотите арендовать у нас зал под своё мероприятие, то вы можете оставить заявку в форме ниже. В течение суток наш администратор с вами обязательно свяжется :)</p>
-        <label class="contact__label">ВАШ НОМЕР ТЕЛЕФОНА</label>
-        <input type="tel" class="contact__input" placeholder="+7 (___) ___-__-__">
-        <label class="contact__label">УКАЖИ ИМЕНА И ФАМИЛИЮ</label>
-        <input type="text" class="contact__input" placeholder="Имя Фамилия">
-        <button class="contact__btn">ОТПРАВИТЬ</button>
+    <div class="contact__card">
+        <div class="contact__left">
+            <img src="logo-self.svg" alt="SELF" class="contact__logo-img">
+            <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
+            <a href="#" class="contact__link"><img src="btn-rent.png" alt="ДОГОВОР ОБ АРЕНДЕ ЗАЛА" class="contact__link-img"></a>
+        </div>
+        <div class="contact__right">
+            <p class="contact__intro">Если вы хотите арендовать у нас зал под своё мероприятие, то вы можете оставить заявку в форме ниже. В течении суток наш администратор с вами обязательно свяжется :)</p>
+            <img src="input-phone.png" alt="Ваш номер телефона" class="contact__img-input">
+            <img src="input-name.png" alt="Ваши имя и фамилия" class="contact__img-input">
+            <div class="contact__btn-wrap">
+                <button class="contact__btn">ОТПРАВИТЬ</button>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -190,13 +198,24 @@
 
 
 <script>
-    // Карусель — прокрутка
-    var arrow = document.querySelector('.carousel__arrow');
-    if (arrow) {
-        arrow.addEventListener('click', function() {
-            document.querySelector('.carousel__track').scrollBy({left: 300, behavior: 'smooth'});
-        });
-    }
+    // Карусель — стрелки прокрутки (обе стороны)
+    document.querySelectorAll('.carousel').forEach(function(carousel) {
+        var track = carousel.querySelector('.carousel__track');
+        var leftBtn = carousel.querySelector('.carousel__arrow--left');
+        var rightBtn = carousel.querySelector('.carousel__arrow--right');
+        if (!track) return;
+        var scrollAmount = track.offsetWidth;
+        if (rightBtn) {
+            rightBtn.addEventListener('click', function() {
+                track.scrollBy({ left: scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
+        if (leftBtn) {
+            leftBtn.addEventListener('click', function() {
+                track.scrollBy({ left: -scrollAmount / 2, behavior: 'smooth' });
+            });
+        }
+    });
 
     // Dropdown — скрыть после выбора пункта
     document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
