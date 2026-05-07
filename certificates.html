@@ -128,42 +128,32 @@
         <span>Not for commercial use!</span>
     </div>
     <div class="footer__socials">
-        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+        <a href="#pinterest" target="_blank" rel="noopener" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="https://t.me/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="https://vk.com/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
     </div>
 </footer>
 
 
-<script>
-    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            var menu = this.closest('.nav__dropdown-menu');
-            if (menu) menu.style.display = 'none';
-            setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
-        });
-    });
 
-    // Карусель — прокрутка по стрелкам
-    document.querySelectorAll('.carousel').forEach(function(carousel) {
-        var track = carousel.querySelector('.carousel__track');
-        var leftBtn = carousel.querySelector('.carousel__arrow--left');
-        var rightBtn = carousel.querySelector('.carousel__arrow--right');
-        var scrollAmount = 420;
 
-        if (rightBtn) {
-            rightBtn.addEventListener('click', function() {
-                track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-            });
-        }
-        if (leftBtn) {
-            leftBtn.addEventListener('click', function() {
-                track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-            });
-        }
-    });
-</script>
 
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__title">Мы заботимся о ваших данных</div>
+    <p class="cookie-banner__text">
+        Наш сайт использует файлы cookie, чтобы сделать ваш просмотр более удобным.
+        Мы используем их для анализа трафика и подбора релевантной рекламы.
+        Нажимая «Принять всё», вы соглашаетесь с нашей <a href="#cookie-policy">Политикой использования cookie</a>.
+    </p>
+    <div class="cookie-banner__buttons">
+        <button class="cookie-banner__btn cookie-banner__btn--primary" id="cookieAcceptAll">Принять всё</button>
+        <button class="cookie-banner__btn cookie-banner__btn--secondary" id="cookieReject">Отклонить необязательные</button>
+        <button class="cookie-banner__btn cookie-banner__btn--ghost" id="cookieSettings">Настроить</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>

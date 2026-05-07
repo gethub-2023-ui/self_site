@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELF — О студии</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <link rel="stylesheet" href="style.css">
-</head>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+    </head>
 <body>
 
 <!-- HEADER (О СТУДИИ active) -->
@@ -28,8 +30,8 @@
 </header>
 
 <!-- HERO BANNER — фото на фон, текст в бежевой карточке поверх -->
-<section class="about-hero">
-    <img src="about-hero-bg.jpg" alt="" class="about-hero__bg">
+<section class="about-hero about-hero--beige about-hero--compact">
+    <img src="room-big-hero-bg.jpg" alt="" class="about-hero__bg">
     <div class="about-hero__overlay">
         <div class="about-hero__card">
             <h1 class="about-hero__title">О СТУДИИ</h1>
@@ -39,7 +41,7 @@
 </section>
 
 <!-- ABOUT NOTES + PHOTOS (как на главной, без пузыря) -->
-<section class="about">
+<section class="about about--lift">
     <div class="blob blob--green"></div>
     <div class="blob blob--yellow"></div>
     <div class="blob blob--arch"></div>
@@ -83,8 +85,7 @@
     <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
 
-<!-- Лавандовая полоска -->
-<div class="about__stripe-bottom"></div>
+<!-- Лавандовая полоска убрана -->
 
 <!-- HOURS -->
 <section class="hours">
@@ -93,9 +94,9 @@
     </div>
 </section>
 
-<!-- MAP + ADDRESS -->
+<!-- MAP + ADDRESS (интерактивная OpenStreetMap) -->
 <section class="location">
-    <img src="map-bg.png" alt="Карта" class="location__bg">
+    <div class="location__map" id="selfMap"></div>
     <div class="location__card">
         <p class="location__label">НАШ АДРЕС:</p>
         <p class="location__address">Город Н, Велесский район, улица Вассермана, строение 30/2, главный вход, 2 этаж, офис № 1000</p>
@@ -108,16 +109,28 @@
         <div class="contact__left">
             <img src="logo-self.svg" alt="SELF" class="contact__logo-img">
             <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
-            <a href="#"><img src="btn-offer.png" alt="ДОГОВОР ОФЕРТЫ" style="max-width:100%;height:auto;display:block;cursor:pointer"></a>
+            <a href="contract-offer.pdf" download><img src="btn-offer.png" alt="ДОГОВОР ОФЕРТЫ" style="max-width:100%;height:auto;display:block;cursor:pointer"></a>
         </div>
         <div class="contact__right">
             <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
-            <img src="input-email.png" alt="email" style="max-width:100%;height:auto;display:block;margin-bottom:8px">
-            <img src="input-comment.png" alt="comment" style="max-width:100%;height:auto;display:block">
-            <img src="btn-submit.png" alt="ОТПРАВИТЬ" style="height:75px;width:auto;display:block;margin-top:20px;cursor:pointer">
+            <form class="contact__form-email" novalidate>
+                <div class="contact__field contact__field--email">
+                    <input type="email" name="email" placeholder=" " required>
+                    <img src="input-email.png" alt="">
+                </div>
+                <div class="contact__field contact__field--textarea">
+                    <textarea name="question" placeholder=" " required></textarea>
+                    <img src="input-comment.png" alt="">
+                </div>
+                <div class="contact__btn-wrap">
+                    <button type="submit" class="contact__btn">ОТПРАВИТЬ</button>
+                </div>
+            </form>
         </div>
     </div>
 </section>
+
+
 
 <!-- FOOTER -->
 <footer class="footer">
@@ -127,40 +140,30 @@
         <span>Not for commercial use!</span>
     </div>
     <div class="footer__socials">
-        <a href="#" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
-        <a href="#" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+        <a href="#pinterest" target="_blank" rel="noopener" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="https://t.me/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="https://vk.com/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
     </div>
 </footer>
 
-<script>
-    document.querySelectorAll('.nav__dropdown-item').forEach(function(item) {
-        item.addEventListener('click', function() {
-            var menu = this.closest('.nav__dropdown-menu');
-            if (menu) menu.style.display = 'none';
-            setTimeout(function() { if (menu) menu.style.display = ''; }, 300);
-        });
-    });
 
-    // Carousel — стрелки прокрутки
-    document.querySelectorAll('.carousel').forEach(function(carousel) {
-        var track = carousel.querySelector('.carousel__track');
-        var leftBtn = carousel.querySelector('.carousel__arrow--left');
-        var rightBtn = carousel.querySelector('.carousel__arrow--right');
-        if (!track) return;
-        var scrollAmount = track.offsetWidth;
-        if (rightBtn) {
-            rightBtn.addEventListener('click', function() {
-                track.scrollBy({ left: scrollAmount / 2, behavior: 'smooth' });
-            });
-        }
-        if (leftBtn) {
-            leftBtn.addEventListener('click', function() {
-                track.scrollBy({ left: -scrollAmount / 2, behavior: 'smooth' });
-            });
-        }
-    });
-</script>
 
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+    <div class="cookie-banner__title">Мы заботимся о ваших данных</div>
+    <p class="cookie-banner__text">
+        Наш сайт использует файлы cookie, чтобы сделать ваш просмотр более удобным.
+        Мы используем их для анализа трафика и подбора релевантной рекламы.
+        Нажимая «Принять всё», вы соглашаетесь с нашей <a href="#cookie-policy">Политикой использования cookie</a>.
+    </p>
+    <div class="cookie-banner__buttons">
+        <button class="cookie-banner__btn cookie-banner__btn--primary" id="cookieAcceptAll">Принять всё</button>
+        <button class="cookie-banner__btn cookie-banner__btn--secondary" id="cookieReject">Отклонить необязательные</button>
+        <button class="cookie-banner__btn cookie-banner__btn--ghost" id="cookieSettings">Настроить</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
 </body></html>
