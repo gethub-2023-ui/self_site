@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SELF — О студии</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     </head>
 <body>
@@ -15,7 +15,7 @@
     <nav class="nav">
         <a href="index.html" class="nav__link">ГЛАВНАЯ</a>
         <a href="certificates.html" class="nav__link">СЕРТИФИКАТЫ</a>
-        <a href="index.html" class="nav__logo"><img src="logo-self.svg" alt="SELF" class="nav__logo-img"></a>
+        <a href="index.html" class="nav__logo"><img src="img/logo-self.svg" alt="SELF" class="nav__logo-img"></a>
         <div class="nav__dropdown">
             <div class="nav__dropdown-trigger">
                 <a href="room-small.html" class="nav__dropdown-label">АРЕНДА ЗАЛОВ</a>
@@ -31,7 +31,7 @@
 
 <!-- HERO BANNER — фото на фон, текст в бежевой карточке поверх -->
 <section class="about-hero about-hero--beige about-hero--compact">
-    <img src="room-big-hero-bg.jpg" alt="" class="about-hero__bg">
+    <img src="img/room-big-hero-bg.jpg" alt="" class="about-hero__bg">
     <div class="about-hero__overlay">
         <div class="about-hero__card">
             <h1 class="about-hero__title">О СТУДИИ</h1>
@@ -64,10 +64,10 @@
 
         <div class="about__photos-col">
             <div class="about__photo about__photo--top">
-                <img src="about-photo1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
+                <img src="img/about-photo1.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
             </div>
             <div class="about__photo about__photo--bottom">
-                <img src="about-photo2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
+                <img src="img/about-photo2.jpg" alt="Фото" style="width:100%;height:100%;object-fit:cover;border-radius:12px">
             </div>
         </div>
     </div>
@@ -77,10 +77,10 @@
 <section class="carousel carousel--cert">
     <button class="carousel__arrow carousel__arrow--left" aria-label="Назад">‹</button>
     <div class="carousel__track">
-        <div class="carousel__item"><img src="about-carousel1.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
-        <div class="carousel__item"><img src="about-carousel2.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
-        <div class="carousel__item"><img src="about-carousel3.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
-        <div class="carousel__item"><img src="about-carousel4.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="img/about-carousel1.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="img/about-carousel2.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="img/about-carousel3.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
+        <div class="carousel__item"><img src="img/about-carousel4.png" alt="Фото" style="width:100%;height:100%;object-fit:cover"></div>
     </div>
     <button class="carousel__arrow carousel__arrow--right" aria-label="Вперёд">›</button>
 </section>
@@ -107,20 +107,20 @@
 <section class="contact">
     <div class="contact__card">
         <div class="contact__left">
-            <img src="logo-self.svg" alt="SELF" class="contact__logo-img">
+            <img src="img/logo-self.svg" alt="SELF" class="contact__logo-img">
             <p class="contact__sub">ФОТОСТУДИЯ АВТОПОРТРЕТА</p>
-            <a href="contract-offer.pdf" download><img src="btn-offer.png" alt="ДОГОВОР ОФЕРТЫ" style="max-width:100%;height:auto;display:block;cursor:pointer"></a>
+            <a href="docs/contract-offer.pdf" download><img src="img/btn-offer.png" alt="ДОГОВОР ОФЕРТЫ" style="max-width:100%;height:auto;display:block;cursor:pointer"></a>
         </div>
         <div class="contact__right">
             <p class="contact__intro">Если у вас возникли вопросы или вы хотите с нами посотрудничать, то можете отправить нам свой вопрос и адрес электронной почты — мы вам обязательно ответим:)</p>
             <form class="contact__form-email" novalidate>
                 <div class="contact__field contact__field--email">
                     <input type="email" name="email" placeholder=" " required>
-                    <img src="input-email.png" alt="">
+                    <img src="img/input-email.png" alt="">
                 </div>
                 <div class="contact__field contact__field--textarea">
                     <textarea name="question" placeholder=" " required></textarea>
-                    <img src="input-comment.png" alt="">
+                    <img src="img/input-comment.png" alt="">
                 </div>
                 <div class="contact__btn-wrap">
                     <button type="submit" class="contact__btn">ОТПРАВИТЬ</button>
@@ -140,10 +140,10 @@
         <span>Not for commercial use!</span>
     </div>
     <div class="footer__socials">
-        <a href="#pinterest" target="_blank" rel="noopener" class="soc"><img src="icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
-        <a href="https://t.me/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-telegram.png" alt="Telegram" class="soc__icon"></a>
-        <a href="https://vk.com/self_studio" target="_blank" rel="noopener" class="soc"><img src="icon-vk.png" alt="VK" class="soc__icon"></a>
-        <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="soc"><img src="icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
+        <a href="#pinterest" target="_blank" rel="noopener" class="soc"><img src="img/icon-pinterest.png" alt="Pinterest" class="soc__icon"></a>
+        <a href="https://t.me/self_studio" target="_blank" rel="noopener" class="soc"><img src="img/icon-telegram.png" alt="Telegram" class="soc__icon"></a>
+        <a href="https://vk.com/self_studio" target="_blank" rel="noopener" class="soc"><img src="img/icon-vk.png" alt="VK" class="soc__icon"></a>
+        <a href="https://wa.me/79991234567" target="_blank" rel="noopener" class="soc"><img src="img/icon-whatsapp.png" alt="WhatsApp" class="soc__icon"></a>
     </div>
 </footer>
 
@@ -165,5 +165,5 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="js/script.js"></script>
 </body></html>

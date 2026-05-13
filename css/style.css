@@ -17,7 +17,7 @@
     font-style: normal;             /* Обычный стиль (не курсив) */
     font-weight: 400;               /* 400 = обычная толщина (Regular) */
     font-display: swap;             /* Показать текст сразу, подгрузить шрифт потом */
-    src: url('fonts/Inter-Regular.ttf') format('truetype');  /* Путь к файлу шрифта */
+    src: url('../fonts/Inter-Regular.ttf') format('truetype');  /* Путь к файлу шрифта */
 }
 
 /* Inter SemiBold — для полужирного текста (заголовки карточек, кнопки) */
@@ -26,7 +26,7 @@
     font-style: normal;
     font-weight: 600;               /* 600 = полужирный (SemiBold) */
     font-display: swap;
-    src: url('fonts/Inter-SemiBold.ttf') format('truetype');
+    src: url('../fonts/Inter-SemiBold.ttf') format('truetype');
 }
 
 /* Inter Bold — для жирного текста (логотип SELF, заголовки) */
@@ -35,7 +35,7 @@
     font-style: normal;
     font-weight: 700;               /* 700 = жирный (Bold) */
     font-display: swap;
-    src: url('fonts/Inter-Bold.ttf') format('truetype');
+    src: url('../fonts/Inter-Bold.ttf') format('truetype');
 }
 
 /* Libre Baskerville Regular — для описательного текста (serif, с засечками) */
@@ -44,7 +44,7 @@
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url('fonts/LibreBaskerville-Regular.ttf') format('truetype');
+    src: url('../fonts/LibreBaskerville-Regular.ttf') format('truetype');
 }
 
 /* Libre Baskerville Bold */
@@ -53,7 +53,7 @@
     font-style: normal;
     font-weight: 700;
     font-display: swap;
-    src: url('fonts/LibreBaskerville-Bold.ttf') format('truetype');
+    src: url('../fonts/LibreBaskerville-Bold.ttf') format('truetype');
 }
 
 /* Libre Baskerville Italic — для курсивного текста */
@@ -62,7 +62,7 @@
     font-style: italic;
     font-weight: 400;
     font-display: swap;
-    src: url('fonts/LibreBaskerville-Italic.ttf') format('truetype');
+    src: url('../fonts/LibreBaskerville-Italic.ttf') format('truetype');
 }
 
 
@@ -521,7 +521,7 @@ a {
     height: 232px;
     top: 213px;
     left: 30px;
-    background: url('element2-green.png') no-repeat center / contain;
+    background: url('../img/element2-green.png') no-repeat center / contain;
     border-radius: 0;
     opacity: 1;
 }
@@ -533,7 +533,7 @@ a {
     top: -13px;
     left: 1070px;
     right: auto;
-    background: url('element3-yellow.png') no-repeat center / contain;
+    background: url('../img/element3-yellow.png') no-repeat center / contain;
     border-radius: 0;
     opacity: 1;
 }
@@ -703,7 +703,7 @@ a {
     height: 155px;
     top: 200px;
     left: 1119px;
-    background: url('bubble.png') no-repeat center / contain;
+    background: url('../img/bubble.png') no-repeat center / contain;
     border: none;
     border-radius: 0;
     font-family: var(--f-serif);
@@ -2110,4 +2110,14 @@ a {
     padding: 22px 0 22px 18px;
     border-radius: 24px;
     z-index: 2;
+}
+
+/* ============================================================
+   ADAPTIVE: ПЛАНШЕТ 768–999px
+   Сайт целиком масштабируется до ширины окна, БЕЗ перестроения.
+   ============================================================ */
+@media (min-width: 768px) and (max-width: 999px) {
+    body {
+        zoom: 0.667;  /* 960 / 1440 */
+    }
 }
