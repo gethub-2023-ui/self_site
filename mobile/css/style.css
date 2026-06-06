@@ -1,0 +1,586 @@
+/* ================================================================
+   SELF — МОБИЛЬНАЯ ВЕРСТКА (480px макет)
+   ================================================================ */
+
+:root {
+    --orange: #EB6333;
+    --dark-orange: #DB6338;
+    --pink: #FA99C0;
+    --yellow: #FFD96C;
+    --lavender: #A7A6E2;
+    --beige: #FFF5D9;
+    --white: #FFF;
+    --black: #000;
+    --f-sans: 'Inter', sans-serif;
+    --f-serif: 'Libre Baskerville', serif;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../fonts/Inter-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+@font-face {
+    font-family: 'Inter';
+    src: url('../../fonts/Inter-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+}
+@font-face {
+    font-family: 'Libre Baskerville';
+    src: url('../../fonts/LibreBaskerville-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+    background: var(--beige);
+}
+
+body {
+    font-family: var(--f-serif);
+    color: var(--black);
+}
+
+/* Hero и duration — с полями 25px по бокам (бежевый виден) */
+.m-hero,
+.m-duration {
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+/* Лавандовая полоса — отменяет поля, выходит на всю ширину */
+.m-lavender-strip {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a { text-decoration: none; color: inherit; }
+
+
+/* ================================================================
+   ХЕДЕР — всегда на всю ширину экрана
+   ================================================================ */
+.m-header {
+    background: var(--yellow);
+    height: 38px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+}
+
+.m-header__logo {
+    display: block;
+    line-height: 0;
+    width: 90px;
+    height: 33px;
+}
+.m-header__logo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.m-burger {
+    width: 25px;
+    height: 18px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.m-burger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--dark-orange);
+    border-radius: 1px;
+}
+
+
+/* ================================================================
+   HERO — оранжевый блок с полями 25px по бокам (бежевый виден)
+   ================================================================ */
+.m-hero {
+    background: var(--orange);
+    padding-bottom: 28px;
+}
+
+.m-hero__photo {
+    width: 100%;
+    line-height: 0;
+}
+.m-hero__photo-img {
+    width: 100%;
+    height: auto;
+}
+
+.m-hero__text {
+    padding: 6px 35px 0;
+}
+
+.m-hero__title {
+    font-family: var(--f-sans);
+    font-size: 70px;
+    font-weight: 400;
+    line-height: 100%;
+    color: var(--black);
+    margin-bottom: 14px;
+}
+
+.m-hero__desc {
+    font-family: var(--f-serif);
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    color: var(--black);
+    margin-bottom: 24px;
+}
+
+.m-hero__btn {
+    display: flex;
+    justify-content: center;
+}
+.m-hero__btn-img {
+    width: 100%;
+    max-width: 365px;
+    height: auto;
+}
+
+
+/* ================================================================
+   ДЛИТЕЛЬНОСТЬ — оранжевый блок, продолжение hero
+   ================================================================ */
+.m-duration {
+    background: var(--orange);
+    padding: 0 0 30px;
+}
+
+.m-duration__heading {
+    background: var(--yellow);
+    width: 100%;
+    font-family: var(--f-sans);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 120%;
+    color: var(--dark-orange);
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 20px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-duration__list {
+    width: 336px;
+    max-width: calc(100% - 30px);
+    margin: 16px auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.m-duration__card {
+    background: var(--white);
+    border: 5px solid var(--pink);
+    border-radius: 10px;
+    padding: 14px 12px;
+    text-align: center;
+}
+
+.m-duration__time {
+    font-family: var(--f-sans);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--black);
+    margin-bottom: 4px;
+}
+
+.m-duration__price {
+    font-family: var(--f-sans);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--lavender);
+    margin-bottom: 8px;
+}
+
+.m-duration__text {
+    font-family: var(--f-serif);
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 130%;
+    color: var(--black);
+}
+
+
+/* ================================================================
+   ЛАВАНДОВАЯ ПОЛОСА — ВСЕГДА на всю ширину экрана
+   width: 100% от body (который всегда 100vw).
+   ================================================================ */
+.m-lavender-strip {
+    width: 100%;
+    height: 30px;
+    background: var(--lavender);
+}
+
+/* ================================================================
+   БЛОК 5: О СТУДИИ (about) — фото комнаты + стикеры
+   Бежевый фон. Абсолютное позиционирование по координатам макета 480px.
+   База секции = 1258px. Локальные top = макетный_top - 1258.
+
+   Размеры (из Figma):
+     element1 жёлтый:  270×126, поднят к лавандовому
+     pic4 верх фото:   261×331, top 1296 → 38,  left 25,  radius 20
+     bubble:           153×107, top 1438 → 180, left 321, rot -8
+     pic5 низ фото:    260×331, top 1526 → 268, left 195, radius 20
+     element2 зелёный: 190×152, top 1647 → 389, left 25
+     card1 текст:      252×126, top 1911 → 653, left 93,  rot 7,  жёлтый
+     card2:            288×178, top 2074 → 816, left 122, rot -6, розовый #FF70AB
+     card3:            288×178, top 2262 → 1004,left 66,  rot 4,  жёлтый #FFD96C
+     card4:            288×178, top 2448 → 1190,left 118, rot -8, розовый #FF70AB
+     арка:             402×187, top 2508 → 1250,left 39
+   ================================================================ */
+.m-about {
+    position: relative;
+    width: 100%;
+    background: var(--beige);
+    height: 1437px;             /* ровно по низу арки (top 1250 + height 187) */
+    overflow: hidden;
+}
+
+/* --- Декор-пятна --- */
+.m-about__blob {
+    position: absolute;
+    z-index: 1;
+}
+/* element1 жёлтый: 270×126, поднят вплотную к лавандовому блоку (top -30) */
+.m-about__blob--yellow {
+    width: 270px;
+    height: 126px;
+    top: -30px;
+    left: 185px;
+}
+/* element2 зелёный: 190×152, top 389, left 25 */
+.m-about__blob--green {
+    width: 190px;
+    height: 152px;
+    top: 389px;
+    left: 25px;
+}
+
+/* арка: 402×187, top 1250, left 39 (картинка с вырезом) */
+.m-about__arch {
+    position: absolute;
+    width: 402px;
+    height: 187px;
+    top: 1250px;
+    left: 39px;
+    z-index: 1;
+}
+
+/* --- Фото комнаты --- */
+.m-about__photo {
+    position: absolute;
+    z-index: 2;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.m-about__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/* pic4 верх: 261×331, top 38, left 25 */
+.m-about__photo--top {
+    width: 261px;
+    height: 331px;
+    top: 38px;
+    left: 25px;
+}
+/* pic5 низ: 260×331, top 268, left 195 */
+.m-about__photo--bottom {
+    width: 260px;
+    height: 331px;
+    top: 268px;
+    left: 195px;
+}
+
+/* --- Пузырь "Вид на фотокомнату изнутри" (картинка с текстом) --- */
+/* 153×107, top 180, left 302 */
+.m-about__bubble {
+    position: absolute;
+    width: 153px;
+    height: 107px;
+    top: 180px;
+    left: 302px;
+    z-index: 3;
+}
+
+/* --- Стикеры (записки) --- */
+.m-about__note {
+    position: absolute;
+    z-index: 4;
+    box-sizing: border-box;
+    border: 2px solid var(--black);
+    padding: 16px 20px;
+    font-family: var(--f-sans);
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 125%;
+}
+/* card1: 288×178, top 653, left 93, жёлтый, оранжевый текст.
+   Наклон взят от розовых (был -6) */
+.m-about__note--1 {
+    width: 288px;
+    min-height: 178px;
+    top: 653px;
+    left: 93px;
+    transform: rotate(-6deg);
+    background: var(--yellow);
+    color: var(--dark-orange);
+}
+/* card2: 288×178, top 816, left 122, розовый, бежевый текст.
+   Наклон взят от жёлтых (был 7) */
+.m-about__note--2 {
+    width: 288px;
+    min-height: 178px;
+    top: 816px;
+    left: 122px;
+    transform: rotate(7deg);
+    background: #FF70AB;
+    color: var(--beige);
+}
+/* card3: 288×178, top 1004, left 66, жёлтый, оранжевый текст.
+   Наклон взят от розовых (был -8) */
+.m-about__note--3 {
+    width: 288px;
+    min-height: 178px;
+    top: 1004px;
+    left: 66px;
+    transform: rotate(-8deg);
+    background: var(--yellow);
+    color: var(--dark-orange);
+}
+/* card4: 288×178, top 1190, left 118, розовый, бежевый текст.
+   Наклон взят от жёлтых (был 4) */
+.m-about__note--4 {
+    width: 288px;
+    min-height: 178px;
+    top: 1190px;
+    left: 118px;
+    transform: rotate(4deg);
+    background: #FF70AB;
+    color: var(--beige);
+}
+
+
+/* ================================================================
+   БЛОК 6: КАРУСЕЛЬ — фото 260×388, без зазоров и фона
+   ================================================================ */
+.m-carousel {
+    position: relative;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.m-carousel__track {
+    display: flex;
+    gap: 0;                         /* без зазоров между фото */
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 0;                     /* без отступов по краям */
+    scrollbar-width: none;
+}
+.m-carousel__track::-webkit-scrollbar {
+    display: none;
+}
+
+.m-carousel__item {
+    flex: 0 0 260px;
+    height: 388px;
+    overflow: hidden;
+}
+.m-carousel__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Стрелки карусели */
+.m-carousel__arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.85);
+    color: var(--dark-orange);
+    font-size: 26px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.m-carousel__arrow--left { left: 8px; }
+.m-carousel__arrow--right { right: 8px; }
+
+
+/* ================================================================
+   БЛОК 7: ВОЛНА С ТЕКСТОМ
+   Розовая волна, бежевая карточка с текстом поверх
+   ================================================================ */
+.m-backdrop {
+    position: relative;
+    background: var(--orange);
+    overflow: hidden;
+}
+.m-backdrop__wave {
+    width: 100%;
+    line-height: 0;
+}
+.m-backdrop__wave img {
+    width: 100%;
+    height: 320px;                  /* больше высота — больше розового сверху */
+    object-fit: cover;
+    object-position: bottom;        /* холмы прижаты вниз, розовое тянется вверх */
+    display: block;
+}
+/* Текст поверх волны — в верхней розовой части */
+.m-backdrop__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 28px 20px 0;
+    box-sizing: border-box;
+}
+.m-backdrop__text {
+    background: #FFF5D9;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+    font-family: var(--f-sans);
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--dark-orange);
+    line-height: 130%;
+    text-align: center;
+}
+.m-backdrop__note {
+    font-family: var(--f-sans);
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--white);            /* белый текст на розовой волне */
+    line-height: 120%;
+    text-align: center;
+}
+
+
+/* ================================================================
+   БЛОК 8: ЦИТАТА — жёлтая карточка на оранжевом
+   ================================================================ */
+.m-quote {
+    background: var(--orange);
+    padding: 30px 20px;
+    display: flex;
+    justify-content: center;
+}
+.m-quote__card {
+    background: var(--yellow);
+    border-radius: 10px;
+    padding: 24px 28px;
+    width: 100%;
+}
+.m-quote__text {
+    font-family: var(--f-sans);
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--dark-orange);
+    line-height: 120%;
+    text-align: center;
+}
+
+
+/* ================================================================
+   БЛОК 9: ФОТОСЕТКА — 2 фото в ряд, каждое 240×270
+   ================================================================ */
+.m-pgrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);  /* 2 колонки */
+    gap: 0;
+}
+.m-pg {
+    height: 270px;                  /* высота ячейки 270 */
+    overflow: hidden;
+}
+.m-pg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* ================================================================
+   БЛОК 10: ПОДВАЛ — текст в столбик по центру + иконки соцсетей
+   ================================================================ */
+.m-footer {
+    background: var(--orange);
+    padding: 28px 20px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+}
+.m-footer__text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--f-serif);
+    font-size: 13px;
+    color: var(--black);            /* чёрный текст */
+    text-align: center;
+}
+.m-footer__socials {
+    display: flex;
+    gap: 16px;
+}
+.m-soc {
+    display: block;
+    width: 44px;
+    height: 44px;
+}
+.m-soc img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}

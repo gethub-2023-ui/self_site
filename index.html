@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1440">
     <title>SELF — фотостудия</title>
+
+    <!-- ============================================================
+         РЕДИРЕКТ НА МОБИЛЬНУЮ ВЕРСИЮ
+         Если ширина viewport маленькая (телефон или DevTools-эмуляция) —
+         отправляем пользователя на mobile/index.html.
+
+         Используем window.innerWidth (а не screen.width), потому что:
+         - на реальном телефоне innerWidth = реальная ширина (390-414)
+         - в DevTools-эмуляции innerWidth = эмулированная ширина
+         - screen.width в DevTools показывает РЕАЛЬНЫЙ монитор → не работает
+         ============================================================ -->
+    <script>
+        if (window.innerWidth <= 600 && !location.pathname.includes('/mobile/')) {
+            location.replace('mobile/index.html');
+        }
+    </script>
+
     <!-- Подключаем файл стилей. Если переименуешь CSS файл — измени имя здесь -->
     <link rel="stylesheet" href="css/style.css">
 </head>

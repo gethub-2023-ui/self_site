@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SELF — фотостудия</title>
+    <script>
+        if (window.innerWidth > 600 && !location.search.includes('force=mobile')) {
+            location.replace('../index.html');
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ХЕДЕР — на всю ширину -->
+<header class="m-header">
+    <a href="index.html" class="m-header__logo">
+        <img src="../img/logo-self.svg" alt="SELF" class="m-header__logo-img">
+    </a>
+    <button class="m-burger" id="mBurger" type="button" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- HERO — оранжевый блок с полями 25px по бокам -->
+<section class="m-hero">
+    <div class="m-hero__photo">
+        <img src="../img/title-mobile.svg" alt="Фотостудия SELF" class="m-hero__photo-img">
+    </div>
+    <div class="m-hero__text">
+        <h1 class="m-hero__title">[СЭЛФ] -</h1>
+        <p class="m-hero__desc">фотостудия автопортрета, где нет фотографа. Здесь не видно камеры, она спрятана за зеркалом. Ты сам руководишь процессом съёмки — благодаря маленькому пульту в руках.</p>
+        <a href="#" class="m-hero__btn">
+            <img src="../img/button главная.svg" alt="ЗАПИСАТЬСЯ НА СЪЁМКУ" class="m-hero__btn-img">
+        </a>
+    </div>
+</section>
+
+<!-- ДЛИТЕЛЬНОСТЬ — оранжевый блок продолжается -->
+<section class="m-duration">
+    <h2 class="m-duration__heading">МОЖНО ВЫБРАТЬ РАЗНУЮ ДЛИТЕЛЬНОСТЬ СЪЁМКИ:</h2>
+    <div class="m-duration__list">
+        <article class="m-duration__card">
+            <div class="m-duration__time">25 МИНУТ</div>
+            <div class="m-duration__price">2000 рублей</div>
+            <p class="m-duration__text">подойдёт для автопортретов, семейных съёмок, парных съёмок, съёмок с питомцами или детьми</p>
+        </article>
+        <article class="m-duration__card">
+            <div class="m-duration__time">40 МИНУТ</div>
+            <div class="m-duration__price">3500 рублей</div>
+            <p class="m-duration__text">средняя продолжительность съёмки, подойдёт для смены нескольких образов или семейной съёмки</p>
+        </article>
+        <article class="m-duration__card">
+            <div class="m-duration__time">90 МИНУТ</div>
+            <div class="m-duration__price">5500 рублей</div>
+            <p class="m-duration__text">подойдёт для больших компаний, семейной съёмки или для съёмок во множестве образов</p>
+        </article>
+    </div>
+</section>
+
+<!-- ЛАВАНДОВАЯ ПОЛОСА — всегда на всю ширину -->
+<div class="m-lavender-strip"></div>
+
+
+<!-- ============================================================
+     БЛОК 5: О СТУДИИ (фото комнаты + стикеры)
+     Бежевый фон. Декор-пятна, 2 фото с пузырём, 4 стикера, арка снизу.
+     Все элементы спозиционированы абсолютно по координатам макета (480px).
+     ============================================================ -->
+<section class="m-about">
+
+    <!-- Декоративные пятна (фон) -->
+    <img src="../img/element3-yellow.png" alt="" class="m-about__blob m-about__blob--yellow">
+    <img src="../img/element2-green.png" alt="" class="m-about__blob m-about__blob--green">
+    <img src="../img/arch-mobile.png" alt="" class="m-about__arch">
+
+    <!-- Фото комнаты -->
+    <div class="m-about__photo m-about__photo--top">
+        <img src="../img/photo1.png" alt="Фото интерьера">
+    </div>
+    <div class="m-about__photo m-about__photo--bottom">
+        <img src="../img/photo2.png" alt="Фото фотокомнаты">
+    </div>
+
+    <!-- Пузырь "Вид на фотокомнату изнутри" — картинка с текстом внутри -->
+    <img src="../img/bubble-mobile.svg" alt="Вид на фотокомнату изнутри" class="m-about__bubble">
+
+    <!-- Стикеры (записки) -->
+    <div class="m-about__note m-about__note--1">
+        <p>Записаться на съёмку можно онлайн через этот сайт или через администратора. Бронирование съёмки происходит после полной оплаты.</p>
+    </div>
+    <div class="m-about__note m-about__note--2">
+        <p>В студии вас встретит администратор и проведёт небольшой инструктаж. После съёмки он расскажет о том, как получить готовые кадры.</p>
+    </div>
+    <div class="m-about__note m-about__note--3">
+        <p>В фотокомнате перед вами будет зеркало, за которым спрятана камера. В руках будет небольшой пультик - им можно будет делать кадры.</p>
+    </div>
+    <div class="m-about__note m-about__note--4">
+        <p>Количество кадров неограниченно. Также в фотокомнате есть реквизит, который можно использовать во время съёмки.</p>
+    </div>
+
+</section>
+
+
+<!-- ЛАВАНДОВАЯ ПОЛОСА после блока about (как после первого блока) -->
+<div class="m-lavender-strip"></div>
+
+
+<!-- ============================================================
+     БЛОК 6: КАРУСЕЛЬ (как на десктопе) — фото 260×388
+     Горизонтальный скролл со стрелками.
+     ============================================================ -->
+<section class="m-carousel">
+    <button class="m-carousel__arrow m-carousel__arrow--left" aria-label="Назад">‹</button>
+    <div class="m-carousel__track" id="mCarouselTrack">
+        <div class="m-carousel__item"><img src="../img/carousel1.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/carousel2.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/carousel3.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/carousel4.jpg" alt="Фото"></div>
+    </div>
+    <button class="m-carousel__arrow m-carousel__arrow--right" aria-label="Вперёд">›</button>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 7: ВОЛНА С ТЕКСТОМ (про цвета фонов)
+     ============================================================ -->
+<section class="m-backdrop">
+    <div class="m-backdrop__wave">
+        <img src="../img/PNG wave with background.png" alt="">
+    </div>
+    <div class="m-backdrop__content">
+        <p class="m-backdrop__text">ДЛЯ СЪЁМКИ МОЖНО ВЫБРАТЬ ФОН ИЗ ДОСТУПНЫХ ЦВЕТОВ.* АКТУАЛЬНЫЕ ЦВЕТА ФОНОВ НА ДАННЫЙ МОМЕНТ — БЕЛЫЙ, РУБИНОВЫЙ, РОЗОВЫЙ, ИНДИГО, ЧЁРНЫЙ.</p>
+        <p class="m-backdrop__note">*В тарифах съёмки на 25 и 40 минут можно выбрать два цвета фона, в тарифе на 90 минут — три цвета.</p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 8: ЦИТАТА
+     ============================================================ -->
+<section class="m-quote">
+    <div class="m-quote__card">
+        <p class="m-quote__text">SELF — это идеальное место для того, чтобы провести время наедине с собой или близкими и запечатлеть свои самые искренние эмоции.</p>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 9: ФОТОСЕТКА — по 2 фото в ряд (240×270), 6 рядов = 12 фото
+     ============================================================ -->
+<section class="m-pgrid">
+    <div class="m-pg"><img src="../img/grid1.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid2.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid3.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid4.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid5.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid6.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid7.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid8.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid9.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid10.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid11.jpg" alt="Фото"></div>
+    <div class="m-pg"><img src="../img/grid12.jpg" alt="Фото"></div>
+</section>
+
+
+<!-- ============================================================
+     БЛОК 10: ПОДВАЛ — текст в столбик по центру + иконки соцсетей
+     ============================================================ -->
+<footer class="m-footer">
+    <div class="m-footer__text">
+        <span>Study project</span>
+        <span>Not for commercial use!</span>
+        <span>Icons by Icons8</span>
+    </div>
+    <div class="m-footer__socials">
+        <a href="#pinterest" class="m-soc"><img src="../img/icon-pinterest.png" alt="Pinterest"></a>
+        <a href="https://t.me/self_studio" class="m-soc"><img src="../img/icon-telegram.png" alt="Telegram"></a>
+        <a href="https://vk.com/self_studio" class="m-soc"><img src="../img/icon-vk.png" alt="VK"></a>
+        <a href="https://wa.me/79991234567" class="m-soc"><img src="../img/icon-whatsapp.png" alt="WhatsApp"></a>
+    </div>
+</footer>
+
+
+<script src="js/script.js"></script>
+</body>
+</html>
