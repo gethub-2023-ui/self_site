@@ -324,12 +324,13 @@ a { text-decoration: none; color: inherit; }
     position: absolute;
     z-index: 4;
     box-sizing: border-box;
-    width: 60%;
+    width: 288px;               /* фиксированная ширина как было */
+    min-height: 178px;
     border: 2px solid var(--black);
-    padding: 3.3vw 4.2vw;       /* ~16px 20px */
+    padding: 16px 20px;         /* как было */
     font-family: var(--f-sans);
     font-weight: 600;
-    font-size: 2.9vw;           /* ~14px */
+    font-size: 14px;            /* как было */
     line-height: 125%;
 }
 .m-about__note--1 {
