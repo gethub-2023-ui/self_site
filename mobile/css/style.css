@@ -260,60 +260,37 @@ a { text-decoration: none; color: inherit; }
      card4:            288×178, top 2448 → 1190,left 118, rot -8, розовый #FF70AB
      арка:             402×187, top 2508 → 1250,left 39
    ================================================================ */
-/* Обёртка-вьюпорт: ограничивает по ширине экрана и прячет лишнее */
-.m-about-wrap {
-    width: 100%;
-    overflow: hidden;
-}
-
-/* Сам блок — фиксированные 480px (макет), масштабируется под экран.
-   transform: scale сжимает всю раскладку пропорционально ширине устройства.
-   --scale задаётся ниже через media/clamp. */
+/* ================================================================
+   БЛОК 5: О СТУДИИ (about) — РЕЗИНОВАЯ вёрстка.
+   Все размеры в vw (пропорционально ширине экрана) и % — поэтому
+   блок одинаково корректен на любой ширине ≤ 600px, ничего не съезжает.
+   Базис: макет 480px. 1px макета = (100/480)vw = 0.208333vw.
+   left задан в % от ширины, top/width/height — в vw.
+   ================================================================ */
 .m-about {
     position: relative;
-    width: 480px;
-    height: 1437px;             /* ровно по низу арки */
+    width: 100%;
     background: var(--beige);
+    height: 299.4vw;            /* 1437px / 480 * 100 */
     overflow: hidden;
-    transform-origin: top left;
-    /* 100vw / 480 = коэффициент сжатия. Если экран 390 → scale 0.8125 */
-    transform: scale(calc(100vw / 480));
-}
-/* Компенсируем высоту после scale: блок визуально становится ниже,
-   поэтому отрицательный margin-bottom убирает лишнее пустое место.
-   1437 * (1 - 100vw/480) — на 390px это ~270px лишних. */
-.m-about-wrap {
-    /* высота обёртки = реальная высота после масштаба */
-    height: calc(1437px * 100vw / 480);
 }
 
 /* --- Декор-пятна --- */
-.m-about__blob {
-    position: absolute;
-    z-index: 1;
-}
-/* element1 жёлтый: 270×126, поднят вплотную к лавандовому блоку (top -30) */
+.m-about__blob { position: absolute; z-index: 1; }
 .m-about__blob--yellow {
-    width: 270px;
-    height: 126px;
-    top: -30px;
-    left: 185px;
+    width: 56.25vw; height: 26.25vw;
+    top: -6.25vw; left: 38.542%;
 }
-/* element2 зелёный: 190×152, top 389, left 25 */
 .m-about__blob--green {
-    width: 190px;
-    height: 152px;
-    top: 389px;
-    left: 25px;
+    width: 39.583vw; height: 31.667vw;
+    top: 81.042vw; left: 5.208%;
 }
 
-/* арка: 402×187, top 1250, left 39 (картинка с вырезом) */
+/* арка */
 .m-about__arch {
     position: absolute;
-    width: 402px;
-    height: 187px;
-    top: 1250px;
-    left: 39px;
+    width: 83.75vw; height: 38.958vw;
+    top: 260.417vw; left: 8.125%;
     z-index: 1;
 }
 
@@ -321,95 +298,59 @@ a { text-decoration: none; color: inherit; }
 .m-about__photo {
     position: absolute;
     z-index: 2;
-    border-radius: 20px;
+    border-radius: 4.2vw;       /* ~20px */
     overflow: hidden;
 }
-.m-about__photo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-/* pic4 верх: 261×331, top 38, left 25 */
+.m-about__photo img { width: 100%; height: 100%; object-fit: cover; }
 .m-about__photo--top {
-    width: 261px;
-    height: 331px;
-    top: 38px;
-    left: 25px;
+    width: 54.375vw; height: 68.958vw;
+    top: 7.917vw; left: 5.208%;
 }
-/* pic5 низ: 260×331, top 268, left 195 */
 .m-about__photo--bottom {
-    width: 260px;
-    height: 331px;
-    top: 268px;
-    left: 195px;
+    width: 54.167vw; height: 68.958vw;
+    top: 55.833vw; left: 40.625%;
 }
 
-/* --- Пузырь "Вид на фотокомнату изнутри" (картинка с текстом) --- */
-/* 153×107, top 180, left 302 */
+/* --- Пузырь --- */
 .m-about__bubble {
     position: absolute;
-    width: 153px;
-    height: 107px;
-    top: 180px;
-    left: 302px;
+    width: 31.875vw; height: 22.292vw;
+    top: 37.5vw; left: 62.917%;
     z-index: 3;
 }
 
-/* --- Стикеры (записки) --- */
+/* --- Стикеры --- */
 .m-about__note {
     position: absolute;
     z-index: 4;
     box-sizing: border-box;
+    width: 60%;
     border: 2px solid var(--black);
-    padding: 16px 20px;
+    padding: 3.3vw 4.2vw;       /* ~16px 20px */
     font-family: var(--f-sans);
     font-weight: 600;
-    font-size: 14px;
+    font-size: 2.9vw;           /* ~14px */
     line-height: 125%;
 }
-/* card1: 288×178, top 653, left 93, жёлтый, оранжевый текст.
-   Наклон взят от розовых (был -6) */
 .m-about__note--1 {
-    width: 288px;
-    min-height: 178px;
-    top: 653px;
-    left: 93px;
+    top: 136.042vw; left: 19.375%;
     transform: rotate(-6deg);
-    background: var(--yellow);
-    color: var(--dark-orange);
+    background: var(--yellow); color: var(--dark-orange);
 }
-/* card2: 288×178, top 816, left 122, розовый, бежевый текст.
-   Наклон взят от жёлтых (был 7) */
 .m-about__note--2 {
-    width: 288px;
-    min-height: 178px;
-    top: 816px;
-    left: 122px;
+    top: 170vw; left: 25.417%;
     transform: rotate(7deg);
-    background: #FF70AB;
-    color: var(--beige);
+    background: #FF70AB; color: var(--beige);
 }
-/* card3: 288×178, top 1004, left 66, жёлтый, оранжевый текст.
-   Наклон взят от розовых (был -8) */
 .m-about__note--3 {
-    width: 288px;
-    min-height: 178px;
-    top: 1004px;
-    left: 66px;
+    top: 209.167vw; left: 13.75%;
     transform: rotate(-8deg);
-    background: var(--yellow);
-    color: var(--dark-orange);
+    background: var(--yellow); color: var(--dark-orange);
 }
-/* card4: 288×178, top 1190, left 118, розовый, бежевый текст.
-   Наклон взят от жёлтых (был 4) */
 .m-about__note--4 {
-    width: 288px;
-    min-height: 178px;
-    top: 1190px;
-    left: 118px;
+    top: 247.917vw; left: 24.583%;
     transform: rotate(4deg);
-    background: #FF70AB;
-    color: var(--beige);
+    background: #FF70AB; color: var(--beige);
 }
 
 
