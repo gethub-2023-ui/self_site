@@ -320,37 +320,45 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* --- Стикеры --- */
+/* Центрируются по горизонтали (left 50% + translateX -50%),
+   небольшой сдвиг через margin-left для «живого» расположения,
+   наклон добавлен в общий transform. */
 .m-about__note {
     position: absolute;
     z-index: 4;
     box-sizing: border-box;
-    width: 288px;               /* фиксированная ширина как было */
+    width: 288px;
     min-height: 178px;
+    left: 50%;
     border: 2px solid var(--black);
-    padding: 16px 20px;         /* как было */
+    padding: 16px 20px;
     font-family: var(--f-sans);
     font-weight: 600;
-    font-size: 14px;            /* как было */
+    font-size: 14px;
     line-height: 125%;
 }
 .m-about__note--1 {
-    top: 136.042vw; left: 19.375%;
-    transform: rotate(-6deg);
+    top: 136.042vw;
+    transform: translateX(-50%) rotate(-6deg);
+    margin-left: -18px;         /* чуть левее центра */
     background: var(--yellow); color: var(--dark-orange);
 }
 .m-about__note--2 {
-    top: 170vw; left: 25.417%;
-    transform: rotate(7deg);
+    top: 170vw;
+    transform: translateX(-50%) rotate(7deg);
+    margin-left: 14px;          /* чуть правее центра */
     background: #FF70AB; color: var(--beige);
 }
 .m-about__note--3 {
-    top: 209.167vw; left: 13.75%;
-    transform: rotate(-8deg);
+    top: 209.167vw;
+    transform: translateX(-50%) rotate(-8deg);
+    margin-left: -14px;
     background: var(--yellow); color: var(--dark-orange);
 }
 .m-about__note--4 {
-    top: 247.917vw; left: 24.583%;
-    transform: rotate(4deg);
+    top: 247.917vw;
+    transform: translateX(-50%) rotate(4deg);
+    margin-left: 14px;
     background: #FF70AB; color: var(--beige);
 }
 
