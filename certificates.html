@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1440">
     <title>SELF — Сертификаты</title>
+
+    <!-- Редирект на мобильную версию (как на главной) -->
+    <script>
+        if (window.innerWidth <= 600 && !location.pathname.includes('/mobile/')) {
+            location.replace('mobile/certificates.html');
+        }
+    </script>
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>

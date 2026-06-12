@@ -145,6 +145,14 @@ a { text-decoration: none; color: inherit; }
     margin-bottom: 14px;
 }
 
+/* Заголовок страницы сертификатов — уменьшен, чтобы "СЕРТИФИКАТ -"
+   с тире помещался в одну строку (целевой размер блока ~301×48px). */
+.m-hero__title--cert {
+    font-size: 40px;
+    line-height: 48px;
+    white-space: nowrap;
+}
+
 .m-hero__desc {
     font-family: var(--f-serif);
     font-size: 18px;
@@ -552,4 +560,42 @@ a { text-decoration: none; color: inherit; }
     width: 100%;
     height: 100%;
     object-fit: contain;
+}
+
+
+/* ================================================================
+   СТРАНИЦА СЕРТИФИКАТОВ — отличия блока about: ВСЕГО 3 стикера.
+   Базис тот же (макет 480px). Убран 4-й стикер, арка и нижняя
+   граница секции подняты, чтобы не было пустоты снизу.
+   Наклоны и горизонтальные сдвиги стикеров — как на главной.
+   ================================================================ */
+.m-about--cert {
+    height: 260vw;                 /* короче, чем на главной (там 299.4vw) */
+}
+
+/* Арка поднята выше — встаёт под третьим стикером */
+.m-about--cert .m-about__arch {
+    top: 221.5vw;
+}
+
+/* Стикер 1 — жёлтый, наклон влево (как note--1 на главной) */
+.m-about--cert .m-about__note--1 {
+    top: 136.042vw;
+    transform: translateX(-50%) rotate(-6deg);
+    margin-left: -18px;
+    background: var(--yellow); color: var(--dark-orange);
+}
+/* Стикер 2 — розовый, наклон вправо (как note--2 на главной) */
+.m-about--cert .m-about__note--2 {
+    top: 170vw;
+    transform: translateX(-50%) rotate(7deg);
+    margin-left: 14px;
+    background: #FF70AB; color: var(--beige);
+}
+/* Стикер 3 — жёлтый, наклон влево (как note--3 на главной) */
+.m-about--cert .m-about__note--3 {
+    top: 209.167vw;
+    transform: translateX(-50%) rotate(-8deg);
+    margin-left: -14px;
+    background: var(--yellow); color: var(--dark-orange);
 }
