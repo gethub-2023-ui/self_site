@@ -146,11 +146,13 @@ a { text-decoration: none; color: inherit; }
 }
 
 /* Заголовок страницы сертификатов — уменьшен, чтобы "СЕРТИФИКАТ -"
-   с тире помещался в одну строку (целевой размер блока ~301×48px). */
+   с тире помещался в одну строку (целевой размер блока ~301×48px).
+   Сдвинут чуть левее относительно колонки текста. */
 .m-hero__title--cert {
     font-size: 40px;
     line-height: 48px;
     white-space: nowrap;
+    margin-left: -12px;
 }
 
 .m-hero__desc {
@@ -436,13 +438,17 @@ a { text-decoration: none; color: inherit; }
     position: relative;
     background: var(--orange);
     overflow: hidden;
+    width: 100%;
+    margin: 0;
 }
 .m-backdrop__wave {
-    width: 100%;
+    width: 100vw;                   /* на всю ширину экрана, без зазора справа */
+    margin: 0;
     line-height: 0;
 }
 .m-backdrop__wave img {
     width: 100%;
+    min-width: 100vw;               /* гарантированно дотягивается до краёв */
     height: 320px;                  /* больше высота — больше розового сверху */
     object-fit: cover;
     object-position: bottom;        /* холмы прижаты вниз, розовое тянется вверх */
