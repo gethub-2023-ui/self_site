@@ -62,9 +62,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // --- Cookie-баннер ---
     initCookieBanner();
-
-    // --- Карта (Leaflet) ---
-    initMap();
 });
 
 // === Cookie-баннер ===
@@ -95,23 +92,4 @@ function initCookieBanner() {
         alert('Здесь должна быть модалка с детальными настройками cookie. В демо — упрощённо.');
         save('custom');
     });
-}
-
-// === Карта OpenStreetMap (Leaflet) ===
-function initMap() {
-    var el = document.getElementById('selfMap');
-    if (!el || typeof L === 'undefined') return;
-
-    // Москва, Большая Дмитровка, 7/5с2 — реальный адрес-заглушка для маркера
-    var lat = 55.761511;
-    var lng = 37.612847;
-
-    var map = L.map(el, { scrollWheelZoom: false }).setView([lat, lng], 16);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19,
-        attribution: '© OpenStreetMap'
-    }).addTo(map);
-    L.marker([lat, lng]).addTo(map)
-        .bindPopup('<b>SELF — Фотостудия автопортрета</b><br>Город Н, Велесский район,<br>ул. Вассермана, 30/2,<br>2 этаж, офис № 1000')
-        .openPopup();
 }

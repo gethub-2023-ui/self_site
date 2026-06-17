@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SELF — Малый зал</title>
+    <script>
+        if (window.innerWidth > 600 && !location.search.includes('force=mobile')) {
+            location.replace('../room-small.html');
+        }
+    </script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ХЕДЕР -->
+<header class="m-header">
+    <a href="index.html" class="m-header__logo">
+        <img src="../img/logo-self.svg" alt="SELF" class="m-header__logo-img">
+    </a>
+    <button class="m-burger" id="mBurger" type="button" aria-label="Меню">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+</header>
+
+<!-- ============================================================
+     HERO — готовый блок 1 (фото зала + текст + волна), SVG 480×399.
+     ============================================================ -->
+<section class="m-room-hero">
+    <img src="../img/room-small-hero-mobile.svg" alt="Малый зал" class="m-room-hero__img">
+    <img src="../img/element3-yellow.png" alt="" class="m-room-hero__blob">
+</section>
+
+
+<!-- ============================================================
+     БЛОК О ЗАЛЕ (2 фото + пузырь + 4 стикера) — как на главной
+     ============================================================ -->
+<section class="m-about m-about--room">
+
+    <img src="../img/element2-green.png" alt="" class="m-about__blob m-about__blob--green">
+    <img src="../img/arch-mobile.png" alt="" class="m-about__arch">
+
+    <!-- Фото малого зала (с десктопа) -->
+    <div class="m-about__photo m-about__photo--top">
+        <img src="../img/room-small-photo1.jpg" alt="Фото малого зала">
+    </div>
+    <div class="m-about__photo m-about__photo--bottom">
+        <img src="../img/room-small-photo2.jpg" alt="Фото малого зала">
+    </div>
+
+    <!-- Пузырь — фон bubble.png из десктопа, текст редактируемый -->
+    <div class="m-about__bubble m-about__bubble--png">
+        <span>Вид на малый зал изнутри.</span>
+    </div>
+
+    <!-- Стикеры — 4 шт -->
+    <div class="m-about__note m-about__note--1">
+        <p>Доступное время для аренды с 10:00 до 23:00. В пределах этого времени можно выбрать подходящий для вас слот.</p>
+    </div>
+    <div class="m-about__note m-about__note--2">
+        <p>Для аренды зала формируется договор, куда вносятся все тарифы и услуги, которыми вы хотите воспользоваться. Один из экземпляров будет у вас.</p>
+    </div>
+    <div class="m-about__note m-about__note--3">
+        <p>Также аренду зала можно совместить со съёмкой в фотокомнате - можно оплатить слот на 25, 40 или 90 минут и использовать его в любой момент.</p>
+    </div>
+    <div class="m-about__note m-about__note--4">
+        <p>В зале есть колонка, зеркало, стол, стулья, много поверхностей, куда можно положить или поставить ваши вещи. Вы можете принести свою посуду, еду и напитки.</p>
+    </div>
+
+</section>
+
+
+<!-- КАРУСЕЛЬ -->
+<section class="m-carousel">
+    <button class="m-carousel__arrow m-carousel__arrow--left" aria-label="Назад">‹</button>
+    <div class="m-carousel__track" id="mCarouselTrack">
+        <div class="m-carousel__item"><img src="../img/room-small-carousel1.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/room-small-carousel2.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/room-small-carousel3.jpg" alt="Фото"></div>
+        <div class="m-carousel__item"><img src="../img/room-small-carousel4.jpg" alt="Фото"></div>
+    </div>
+    <button class="m-carousel__arrow m-carousel__arrow--right" aria-label="Вперёд">›</button>
+</section>
+
+<!-- ЛАВАНДОВАЯ ПОЛОСА -->
+<div class="m-lavender-strip"></div>
+
+
+<!-- ============================================================
+     ТАРИФЫ — оранжевая плашка-заголовок + бежевые таблицы
+     ============================================================ -->
+<section class="m-tariff-head">
+    <div class="m-tariff-head__card">ТАРИФЫ АРЕНДЫ МАЛОГО ЗАЛА</div>
+</section>
+
+<section class="m-tariffs">
+
+    <!-- Таблица 1: аренда зала -->
+    <h3 class="m-tariffs__subtitle">Будние дни, с 10:00 до 17:00</h3>
+    <div class="m-tariffs__rows">
+        <div class="m-tariffs__row"><span>1 час</span><i></i><b>1500 руб.</b></div>
+        <div class="m-tariffs__row"><span>2 часа</span><i></i><b>2000 руб.</b></div>
+        <div class="m-tariffs__row"><span>3 часа</span><i></i><b>3000 руб.</b></div>
+    </div>
+
+    <h3 class="m-tariffs__subtitle">Будние дни, с 17:00 до 23:00<br>и выходные дни</h3>
+    <div class="m-tariffs__rows">
+        <div class="m-tariffs__row"><span>1 час</span><i></i><b>3000 руб.</b></div>
+        <div class="m-tariffs__row"><span>2 часа</span><i></i><b>4000 руб.</b></div>
+        <div class="m-tariffs__row"><span>3 часа</span><i></i><b>5000 руб.</b></div>
+    </div>
+
+    <div class="m-tariffs__row m-tariffs__row--note">
+        <span>Доплата за позднее время (20:00-23:00)</span><i></i><b>300 руб./ч.</b>
+    </div>
+
+    <!-- Таблица 2: фотокомната совместно -->
+    <h3 class="m-tariffs__title">АРЕНДА ФОТОКОМНАТЫ СОВМЕСТНО С АРЕНДОЙ МАЛОГО ЗАЛА*</h3>
+
+    <h3 class="m-tariffs__subtitle">Будние дни, с 10:00 до 17:00</h3>
+    <div class="m-tariffs__rows">
+        <div class="m-tariffs__row"><span>25 минут</span><i></i><b>2000 руб.</b></div>
+        <div class="m-tariffs__row"><span>40 минут</span><i></i><b>3500 руб.</b></div>
+        <div class="m-tariffs__row"><span>90 минут</span><i></i><b>4500 руб.</b></div>
+    </div>
+
+    <h3 class="m-tariffs__subtitle">Будние дни, с 17:00 до 23:00<br>и выходные дни</h3>
+    <div class="m-tariffs__rows">
+        <div class="m-tariffs__row"><span>25 минут</span><i></i><b>2000 руб.</b></div>
+        <div class="m-tariffs__row"><span>40 минут</span><i></i><b>3700 руб.</b></div>
+        <div class="m-tariffs__row"><span>90 минут</span><i></i><b>5500 руб.</b></div>
+    </div>
+
+    <div class="m-tariffs__row m-tariffs__row--note">
+        <span>Доплата за количество участников съёмки (если человек более, чем 5)</span><i></i><b>300 руб./чел.</b>
+    </div>
+
+    <p class="m-tariffs__footnote">*Время аренды зала и фотокомнаты суммируется. Пример: вы хотите арендовать большой зал на 2 часа в будний день в 10:00 и хотите арендовать фотокомнату на 40 минут. Итоговое время аренды составит: 2 часа 40 минут, с 10:00 до 12:40. В это время вы можете использовать свои 40 минут в фотокомнате в любой удобный момент.</p>
+
+    <!-- Таблица 3: посуда -->
+    <h3 class="m-tariffs__title m-tariffs__title--dishes">Вы также можете арендовать посуду по следующим расценкам:</h3>
+    <div class="m-tariffs__rows">
+        <div class="m-tariffs__row"><span>Фужеры-креманки</span><i></i><b>100 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Тарелка (d=30 см)</span><i></i><b>150 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Тарелка (d=15 см)</span><i></i><b>50 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Стаканы</span><i></i><b>50 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Чайный набор (чашка+блюдце)</span><i></i><b>200 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Графин</span><i></i><b>200 руб./шт.</b></div>
+        <div class="m-tariffs__row"><span>Комплект столовых приборов (ложки десертная и столовая, вилка и нож)</span><i></i><b>50 руб./шт.</b></div>
+    </div>
+</section>
+
+
+<!-- ============================================================
+     КОНТАКТЫ — блок SELF на оранжевом фоне (карточка 402×638)
+     ============================================================ -->
+<section class="m-rent-contact">
+    <div class="m-rent-contact__card">
+        <img src="../img/logo-self.svg" alt="SELF" class="m-rent-contact__logo">
+        <p class="m-rent-contact__sub">ФОТОСТУДИЯ<br>АВТОПОРТРЕТА</p>
+        <p class="m-rent-contact__intro">Если вы хотите арендовать у нас зал под своё мероприятие, то вы можете оставить заявку в форме ниже. В течении суток наш администратор с вами обязательно свяжется :)</p>
+
+        <label class="m-rent-contact__label">ВАШ НОМЕР ТЕЛЕФОНА</label>
+        <input type="tel" class="m-rent-contact__input" placeholder="+7 900 000-00-00">
+
+        <label class="m-rent-contact__label">ВАШИ ИМЯ И ФАМИЛИЯ</label>
+        <input type="text" class="m-rent-contact__input" placeholder="Иванов Иван">
+
+        <button type="button" class="m-rent-contact__btn-send">
+            <img src="../img/btn-send-mobile.svg" alt="ОТПРАВИТЬ">
+        </button>
+        <a href="../docs/contract-rent.pdf" download class="m-rent-contact__doc">
+            <img src="../img/btn-doc-mobile.svg" alt="" class="m-rent-contact__doc-bg">
+            <span>ДОГОВОР<br>ОБ АРЕНДЕ ЗАЛА</span>
+        </a>
+    </div>
+</section>
+
+
+<!-- ПОДВАЛ -->
+<footer class="m-footer">
+    <div class="m-footer__text">
+        <span>Study project</span>
+        <span>Not for commercial use!</span>
+        <span>Icons by Icons8</span>
+    </div>
+    <div class="m-footer__socials">
+        <a href="#pinterest" class="m-soc"><img src="../img/icon-pinterest.png" alt="Pinterest"></a>
+        <a href="https://t.me/self_studio" class="m-soc"><img src="../img/icon-telegram.png" alt="Telegram"></a>
+        <a href="https://vk.com/self_studio" class="m-soc"><img src="../img/icon-vk.png" alt="VK"></a>
+        <a href="https://wa.me/79991234567" class="m-soc"><img src="../img/icon-whatsapp.png" alt="WhatsApp"></a>
+    </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>

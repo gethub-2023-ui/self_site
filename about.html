@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1440">
     <title>SELF — О студии</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
     </head>
 <body>
 
@@ -94,9 +92,18 @@
     </div>
 </section>
 
-<!-- MAP + ADDRESS (интерактивная OpenStreetMap) -->
+<!-- MAP + ADDRESS (Яндекс.Карты) -->
 <section class="location">
-    <div class="location__map" id="selfMap"></div>
+    <div class="location__map">
+        <iframe
+            src="https://yandex.ru/map-widget/v1/?ll=37.612847%2C55.761511&z=16&pt=37.612847,55.761511,pm2rdm"
+            class="location__map-frame"
+            allowfullscreen="true"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="SELF — Фотостудия на карте">
+        </iframe>
+    </div>
     <div class="location__card">
         <p class="location__label">НАШ АДРЕС:</p>
         <p class="location__address">Город Н, Велесский район, улица Вассермана, строение 30/2, главный вход, 2 этаж, офис № 1000</p>
